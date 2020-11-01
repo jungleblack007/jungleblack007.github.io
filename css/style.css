@@ -4677,3 +4677,148 @@ img.lazyload:not(.placeholder).loaded {
 #safearea {
   display: block;
 }
+.main_banner {
+  width: 66%;
+  float: left;
+  height: 100%;
+}
+.main_banner img {
+  border-radius: 8px;
+}
+@media screen and (max-width: 800px) {
+  .main_banner {
+    width: 100%;
+    height: 40vw;
+    float: left;
+  }
+}
+.hot_post {
+  width: 33%;
+  height: 100%;
+  float: left;
+  padding: 0 0px 0 1vw;
+}
+@media screen and (max-width: 800px) {
+  .hot_post {
+    width: 100%;
+    height: 50vw;
+    float: left;
+    margin-top: 1vw;
+    padding: 0;
+  }
+}
+.hot_post .forpadding {
+  padding-top: 0.5vw;
+}
+.hot_post .index-banner {
+  position: relative;
+  height: 50%;
+}
+.heson_row {
+  background-color: none;
+  width: 100%;
+  height: 20vw;
+  max-height: 400px;
+  margin-top: 20px;
+}
+@media screen and (max-width: 800px) {
+  .heson_row {
+    width: 100%;
+    height: 65vw;
+  }
+}
+@media screen and (max-width: 2048px) {
+  .heson_row {
+    width: 100%;
+    height: 25vw;
+  }
+}
+.banners {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(200,200,200,0.5);
+}
+@media screen and (max-width: 600px) {
+  .banners {
+    width: 100%;
+    height: 40vw;
+    float: left;
+  }
+}
+.hot_post img {
+  height: 100%;
+  border-radius: 8px;
+}
+.banners:hover .click_left {
+  display: block;
+}
+.banners:hover .click_right {
+  display: block;
+}
+.click_left {
+  width: 1vw;
+  position: absolute;
+  z-index: 10;
+  left: 2vw;
+  top: 2.5vw;
+  display: none;
+}
+.click_right {
+  width: 1vw;
+  position: absolute;
+  z-index: 10;
+  right: 2vw;
+  top: 2.5vw;
+  display: none;
+}
+.click_left img,
+.click_right img {
+  width: 100%;
+  height: 100%;
+}
+.number {
+  width: 100%;
+  height: 1vw;
+  line-height: 1vw;
+  position: absolute;
+  z-index: 10;
+  text-align: center;
+  bottom: 1.5vw;
+}
+.numbers {
+  display: inline-block;
+}
+.numbers span {
+  color: #fff;
+  font-size: 0.7vw;
+  display: block;
+  float: left;
+  width: 1vw;
+  height: 1vw;
+  line-height: 1vw;
+  text-align: center;
+  border-radius: 100vw;
+  margin: 0 0.5vw;
+  padding: 0vw;
+  border: 0.1vw solid #fff;
+}
+.numbers span:hover {
+  cursor: pointer;
+}
+.banner_img {
+  width: 100%;
+  height: 100%;
+}
+.banner_img img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  break-inside: 1;
+}
+.l_main .post-list {
+  margin: 0 auto !important;
+  float: left;
+}

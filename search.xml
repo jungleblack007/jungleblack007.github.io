@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>系统发育多样性指标结构</title>
+      <link href="2020/10/29/SESMNTD/"/>
+      <url>2020/10/29/SESMNTD/</url>
+      
+        <content type="html"><![CDATA[<p>这一篇主要是从山山师兄中期答辩学到的一个知识点，关于群落结构的亲缘关系。</p><!--toc--><!--readmore--><h1 id="关于内插法"><a href="#关于内插法" class="headerlink" title="关于内插法"></a>关于内插法</h1><blockquote><p>基于内插法假设，一个物种的分布应该在其海拔上下限区间内均匀分布，所观察到在海拔段上离散分布有可能是取样不足导致的取样偏误。</p></blockquote><p>翻译过来就是，如果一个物种在海拔100m和300m都出现了，那么这个物种应该在这个范围的海拔内都存在。所以就可以这样将物种的分布划分区间。</p><h1 id="系统发育多样性指标"><a href="#系统发育多样性指标" class="headerlink" title="系统发育多样性指标"></a>系统发育多样性指标</h1><p>这个可以用R中的picante计算，四个系统发育多样性指标。</p><p>Faith系统发育多样性（Faith’s PD）:</p><p>系统发育多样性标准净效应（SES.PD）:</p><script type="math/tex; mode=display">SES.PD=\frac{PD_{sample}-Mean_{randomsample}}{SD(PD_{randomsample})}</script><p>系统发育关系净效应（SES.MPD）:</p><script type="math/tex; mode=display">SES.MPD=\frac{MPD_{sample}-MEAN(MPD_{randomsample})}{SD(MPD_{randomsample})}</script><p>系统发育最近种间亲缘关系净效应（SES.MNTD）:</p><script type="math/tex; mode=display">SES.MNTD=\frac{MNTD_{sample}-MEAN(MNTD_{randomsample})}{SD(MNTD_{randomsample})}</script><blockquote><p>根据昨天向丫丫请教，$SES.MPD$主要衡量的是基部的支，$SES.MNTD$衡量的是末端的支。</p></blockquote><p>公式测试  $\leq$</p><script type="math/tex; mode=display">\frac{1}{x}​</script><script type="math/tex; mode=display">latex公式内容</script><script type="math/tex; mode=display">E(A)=\sum_{j=1}^v \frac {s_{1j}+s_{2j}+....s_{mj}} sI(s_{1j}+s_{2j}+....s_{mj})</script>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> metagenome </tag>
+            
+            <tag> 算法 </tag>
+            
+            <tag> 数据分析 </tag>
+            
+            <tag> 物种亲缘关系 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Syzygospora</title>
+      <link href="2020/10/27/Syzygospora/"/>
+      <url>2020/10/27/Syzygospora/</url>
+      
+        <content type="html"><![CDATA[<p>​    今天，我才搞清楚之前在祁连拍的一种看起来像子囊菌的真菌真名叫做轭孢耳 <em>Syzygospora</em>。</p><p><img src="/2020/10/27/Syzygospora/IMG_5528.JPG" class="lazyload" data-srcset="/2020/10/27/Syzygospora/IMG_5528.JPG" srcset="data:image/png;base64,666" alt="IMG_5528"></p><a id="more"></a><p>​    这个菌最有意思的地方不仅仅在于它是一个寄生性的真菌，还在于这个看起来像鹿花菌的菌体其实是蘑菇的本体形成的，就像虫瘿一样。轭孢耳寄生于如<em>Gymnopus</em>等寄主的表面，促进寄主细胞的加速分裂和畸形分化从而形成独特的形状，以利于轭孢耳本身的孢子扩散！太神奇了！</p><p><img src="/2020/10/27/Syzygospora/1.png" class="lazyload" data-srcset="/2020/10/27/Syzygospora/1.png" srcset="data:image/png;base64,666" alt=""></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 蘑菇 </tag>
+            
+            <tag> 科普 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Starting blog</title>
+      <link href="2020/10/25/%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE/"/>
+      <url>2020/10/25/%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE/</url>
+      
+        <content type="html"><![CDATA[<p>博客的模板基本上就是用这个yilim了，但是里面还有很多需要调节的东西，容我慢慢来。</p><p>最近稍微有点忙，可能没时间详细弄博客了，先这样更新着吧，我尽量保证大事、小事都网上更，把这个做成一个完整的日志形式的，记录更多有意义的内容在其中，这样以后查信息的时候还都能查到！先这样吧，今天有一更！</p><a id="more"></a><p>首先说一下常用的几个命令吧，</p><h2 id="关于常用命令"><a href="#关于常用命令" class="headerlink" title="关于常用命令"></a>关于常用命令</h2><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo clean //清除一下缓存</span><br><span class="line">hexo g  //生成静态页面</span><br><span class="line">hexo s //开启本地服务器</span><br><span class="line">hexo d   //查看后没有问题即可部署到github上</span><br><span class="line">hexo new "new article"</span><br></pre></td></tr></tbody></table></figure><h2 id="关于Yilim主题"><a href="#关于Yilim主题" class="headerlink" title="关于Yilim主题"></a>关于Yilim主题</h2><p>在设置这个主题的过程中我遇到了比较多的问题，现在一一解决。<span class="github-emoji"><span>✨</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2728.png?v8" class="lazyload" data-srcset="https://github.githubassets.com/images/icons/emoji/unicode/2728.png?v8" srcset="data:image/png;base64,666" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p><h3 id="作者名不显示的问题："><a href="#作者名不显示的问题：" class="headerlink" title="作者名不显示的问题："></a>作者名不显示的问题：</h3><blockquote><p>yilia的需要在主题下的_config.yml加入author: ,记得不是在menu:下</p></blockquote><h3 id="关于作者头像的问题："><a href="#关于作者头像的问题：" class="headerlink" title="关于作者头像的问题："></a>关于作者头像的问题：</h3><blockquote><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim yilia/_config.yml</span><br><span class="line"><span class="comment">#你的头像url</span></span><br><span class="line">avatar: /img/daerzi.jpg</span><br></pre></td></tr></tbody></table></figure><p>链接：<a href="https://www.jianshu.com/p/adb7640c97c2">https://www.jianshu.com/p/adb7640c97c2</a><br>来源：简书</p></blockquote><h3 id="图片不显示的问题："><a href="#图片不显示的问题：" class="headerlink" title="图片不显示的问题："></a>图片不显示的问题：</h3><blockquote><p>修改博客根目录中_config.yml文件的配置项post_asset_folder为true：<br></p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">post_asset_folder: true</span><br></pre></td></tr></tbody></table></figure><br>完成此设置后，当你通过hexo new 文件名新建博客后，会产生一个和文件同名的文件夹。<p></p><p>在博客根目录中下使用npm安装插件：</p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install https://github.com/CodeFalling/hexo-asset-image --save</span><br></pre></td></tr></tbody></table></figure><p>作者：Gsdxiaohei<br>链接：<a href="https://www.jianshu.com/p/ea78bdd0551f">https://www.jianshu.com/p/ea78bdd0551f</a><br>来源：简书<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p></blockquote><h3 id="关于文章配置"><a href="#关于文章配置" class="headerlink" title="关于文章配置"></a>关于文章配置</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">--- </span><br><span class="line">title: postName #文章页面上的显示名称，一般是中文</span><br><span class="line">date: 2013-12-02 15:30:16 #文章生成时间，一般不改，当然也可以任意修改 categories: 默认分类 #分类 </span><br><span class="line">tags: [tag1,tag2,tag3] #文章标签，可空，多标签请用格式，注意:后面有个空格 description: 附加一段文章摘要，字数最好在140字以内，会出现在meta的description里面</span><br><span class="line">---</span><br></pre></td></tr></tbody></table></figure><hr><p>相册功能暂未开启！留言功能正在开发！</p><h3 id="试试Emoji"><a href="#试试Emoji" class="headerlink" title="试试Emoji"></a>试试Emoji</h3><p><span class="github-emoji"><span>😐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f610.png?v8" class="lazyload" data-srcset="https://github.githubassets.com/images/icons/emoji/unicode/1f610.png?v8" srcset="data:image/png;base64,666" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>😄</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f604.png?v8" class="lazyload" data-srcset="https://github.githubassets.com/images/icons/emoji/unicode/1f604.png?v8" srcset="data:image/png;base64,666" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> <span class="github-emoji"><span>😊</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f60a.png?v8" class="lazyload" data-srcset="https://github.githubassets.com/images/icons/emoji/unicode/1f60a.png?v8" srcset="data:image/png;base64,666" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> <span class="github-emoji"><span>😆</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f606.png?v8" class="lazyload" data-srcset="https://github.githubassets.com/images/icons/emoji/unicode/1f606.png?v8" srcset="data:image/png;base64,666" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>🐫</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f42b.png?v8" class="lazyload" data-srcset="https://github.githubassets.com/images/icons/emoji/unicode/1f42b.png?v8" srcset="data:image/png;base64,666" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p><p>具体表格参考：<a href="https://hasaik.com/posts/9b280ea3.html">https://hasaik.com/posts/9b280ea3.html</a></p><p>在找Emoji的过程中，发现一个人用 <a href="https://volantis.js.org/">Volantis</a>主题，也非常棒！先就这样吧，等再有时间了再换一个新的主题！</p><h3 id="关于公式"><a href="#关于公式" class="headerlink" title="关于公式"></a>关于公式</h3><p>调试了一上午公式都没有解决掉，后来在<a href="https://blog.csdn.net/weixin_44855907/article/details/105376826">基于Hexo Github搭建个人博客（二）：更改博客主题</a>这个帖子里把公式调整出来了。其实也很简单，就是把标题里面的mathjax打开就行了。</p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">mathjax: true</span><br><span class="line">---</span><br></pre></td></tr></tbody></table></figure><h3 id="主题图片轮播"><a href="#主题图片轮播" class="headerlink" title="主题图片轮播"></a>主题图片轮播</h3><p>照这个链接搞的 <a href="https://www.heson10.com/posts/19736.html">https://www.heson10.com/posts/19736.html</a></p><p>但是失败了，总结原因应该是步骤中有一个：</p><blockquote><p>在themes\volantis\source\css\style.css中，增加代码：</p><figure class="highlight css"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">if hexo-config('plugins.main_banner.enable')</span><br><span class="line">    <span class="keyword">@import</span> <span class="string">'_other/main_banner'</span></span><br></pre></td></tr></tbody></table></figure></blockquote><p>但是我没找到style.css的文件，自己创建一个会报错，我直接添加到style.styl中了。。。结果没有任何变化。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> blog </tag>
+            
+            <tag> 技术 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
