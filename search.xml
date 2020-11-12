@@ -4,11 +4,42 @@
   
     
     <entry>
+      <title>Low-Coverage Whole Genome Sequence assembly and annotation</title>
+      <link href="2020/11/12/LC-WGS-assembly-and-annotation/"/>
+      <url>2020/11/12/LC-WGS-assembly-and-annotation/</url>
+      
+        <content type="html"><![CDATA[<p>[toc]</p><p>​    刚刚和邦叔聊了一下，大概了解了浅层基因组测序的基本思路：质量评估 -&gt; 删除不好的reads -&gt; 基因组组装 -&gt; 基因组注释 -&gt; 以及下一步的orthoFinder寻找单拷贝直系同源基因！</p><a id="more"></a><ol><li><p>FastQC：对测序质量进行评估</p></li><li><p>FastP： 删掉测序质量不好的reads</p></li><li><ol><li>删完以后可以再重复一次FastQC的操作（非必须）</li></ol></li><li><p>Spades：基因组组装，基本上可以直接用默认的参数进行组装</p></li><li><ol><li>这里的k-<em>mer</em>默认是梯度评估的</li><li>根据攀蒙哥介绍，WTDBG2、falcon、canu也可以快速组装（我还是先试试spades吧）</li><li>组装完以后可以用 busco、assembly-stats等软件进行评估（N50等）</li></ol></li><li><p>Anotation：注释，这是一个比较考验技术的东西。</p></li><li><ol><li>最好的是用转录组进行基因的估计。</li><li>没有转录组我们可以用同源基因组进行注释：GEMOMA</li><li>也可以blast，用：augustus（conda braker2）、homology</li></ol></li><li><ol><li>注释完，再用EVM进行整合</li></ol></li></ol><p>​    这之后就可以进行钊哥写的orthoFinder进行单拷贝直系同源基因的提取了。后话了，我先把这个注释搞定，希望一周内能搞完吧。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 浅层基因组测序 </category>
+          
+          <category> 测序结果组装 </category>
+          
+          <category> 生物信息学 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 标签1 </tag>
+            
+            <tag> 标签2 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>系统发育多样性指标结构</title>
       <link href="2020/10/29/SESMNTD/"/>
       <url>2020/10/29/SESMNTD/</url>
       
-        <content type="html"><![CDATA[<p>这一篇主要是从山山师兄中期答辩学到的一个知识点，关于群落结构的亲缘关系。</p><!--toc--><!--readmore--><h1 id="关于内插法"><a href="#关于内插法" class="headerlink" title="关于内插法"></a>关于内插法</h1><blockquote><p>基于内插法假设，一个物种的分布应该在其海拔上下限区间内均匀分布，所观察到在海拔段上离散分布有可能是取样不足导致的取样偏误。</p></blockquote><p>翻译过来就是，如果一个物种在海拔100m和300m都出现了，那么这个物种应该在这个范围的海拔内都存在。所以就可以这样将物种的分布划分区间。</p><h1 id="系统发育多样性指标"><a href="#系统发育多样性指标" class="headerlink" title="系统发育多样性指标"></a>系统发育多样性指标</h1><p>这个可以用R中的picante计算，四个系统发育多样性指标。</p><p>Faith系统发育多样性（Faith’s PD）:</p><p>系统发育多样性标准净效应（SES.PD）:</p><script type="math/tex; mode=display">SES.PD=\frac{PD_{sample}-Mean_{randomsample}}{SD(PD_{randomsample})}</script><p>系统发育关系净效应（SES.MPD）:</p><script type="math/tex; mode=display">SES.MPD=\frac{MPD_{sample}-MEAN(MPD_{randomsample})}{SD(MPD_{randomsample})}</script><p>系统发育最近种间亲缘关系净效应（SES.MNTD）:</p><script type="math/tex; mode=display">SES.MNTD=\frac{MNTD_{sample}-MEAN(MNTD_{randomsample})}{SD(MNTD_{randomsample})}</script><blockquote><p>根据昨天向丫丫请教，$SES.MPD$主要衡量的是基部的支，$SES.MNTD$衡量的是末端的支。</p></blockquote><p>公式测试  $\leq$</p><script type="math/tex; mode=display">\frac{1}{x}​</script><script type="math/tex; mode=display">latex公式内容</script><script type="math/tex; mode=display">E(A)=\sum_{j=1}^v \frac {s_{1j}+s_{2j}+....s_{mj}} sI(s_{1j}+s_{2j}+....s_{mj})</script>]]></content>
+        <content type="html"><![CDATA[<p>这一篇主要是从山山师兄中期答辩学到的一个知识点，关于群落结构的亲缘关系。</p><!--toc--><!--readmore--><h1 id="关于内插法"><a href="#关于内插法" class="headerlink" title="关于内插法"></a>关于内插法</h1><blockquote><p>基于内插法假设，一个物种的分布应该在其海拔上下限区间内均匀分布，所观察到在海拔段上离散分布有可能是取样不足导致的取样偏误。</p></blockquote><p>翻译过来就是，如果一个物种在海拔100m和300m都出现了，那么这个物种应该在这个范围的海拔内都存在。所以就可以这样将物种的分布划分区间。</p><h1 id="系统发育多样性指标"><a href="#系统发育多样性指标" class="headerlink" title="系统发育多样性指标"></a>系统发育多样性指标</h1><p>这个可以用R中的picante计算，四个系统发育多样性指标。</p><p>Faith系统发育多样性（Faith’s PD）:</p><p>系统发育多样性标准净效应（SES.PD）:</p><script type="math/tex; mode=display">SES.PD=\frac{PD_{sample}-Mean_{randomsample}}{SD(PD_{randomsample})}</script><p>系统发育关系净效应（SES.MPD）:</p><script type="math/tex; mode=display">SES.MPD=\frac{MPD_{sample}-MEAN(MPD_{randomsample})}{SD(MPD_{randomsample})}</script><p>系统发育最近种间亲缘关系净效应（SES.MNTD）:</p><script type="math/tex; mode=display">SES.MNTD=\frac{MNTD_{sample}-MEAN(MNTD_{randomsample})}{SD(MNTD_{randomsample})}</script><blockquote><p>根据昨天向丫丫请教，$SES.MPD$主要衡量的是基部的支，$SES.MNTD$衡量的是末端的支。</p></blockquote><p>其实我想的是，这些系统发育的指标和生态位联合起来分析，应该能得到非常棒的结果。</p>]]></content>
       
       
       
