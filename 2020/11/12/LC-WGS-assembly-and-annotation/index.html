@@ -27,8 +27,7 @@
   
 
   
-    <meta name="description" content="[toc]
-​    刚刚和邦叔聊了一下，大概了解了浅层基因组测序的基本思路：质量评估 -&gt; 删除不好的reads -&gt; 基因组组装 -&gt; 基因组注释 -&gt; 以及下一步的orthoFinder寻找单拷贝直系同源基因！">
+    <meta name="description" content="​    刚刚和邦叔聊了一下，大概了解了浅层基因组测序的基本思路：质量评估 -&gt; 删除不好的reads -&gt; 基因组组装 -&gt; 基因组注释 -&gt; 以及下一步的orthoFinder寻找单拷贝直系同源基因！">
   
 
   <!-- feed -->
@@ -461,40 +460,29 @@
 
 
   
-  <p>[toc]</p>
-<p>​    刚刚和邦叔聊了一下，大概了解了浅层基因组测序的基本思路：质量评估 -&gt; 删除不好的reads -&gt; 基因组组装 -&gt; 基因组注释 -&gt; 以及下一步的orthoFinder寻找单拷贝直系同源基因！</p>
+  <p>​    刚刚和邦叔聊了一下，大概了解了浅层基因组测序的基本思路：质量评估 -&gt; 删除不好的reads -&gt; 基因组组装 -&gt; 基因组注释 -&gt; 以及下一步的orthoFinder寻找单拷贝直系同源基因！</p>
 <a id="more"></a>
 <ol>
-<li><p>FastQC：对测序质量进行评估</p>
-</li>
-<li><p>FastP： 删掉测序质量不好的reads</p>
-</li>
-<li><ol>
+<li>FastQC：对测序质量进行评估</li>
+<li>FastP： 删掉测序质量不好的reads</li>
 <li>删完以后可以再重复一次FastQC的操作（非必须）</li>
-</ol>
-</li>
-<li><p>Spades：基因组组装，基本上可以直接用默认的参数进行组装</p>
-</li>
-<li><ol>
+<li>Spades：基因组组装，基本上可以直接用默认的参数进行组装<ol>
 <li>这里的k-<em>mer</em>默认是梯度评估的</li>
 <li>根据攀蒙哥介绍，WTDBG2、falcon、canu也可以快速组装（我还是先试试spades吧）</li>
 <li>组装完以后可以用 busco、assembly-stats等软件进行评估（N50等）</li>
 </ol>
 </li>
 <li><p>Anotation：注释，这是一个比较考验技术的东西。</p>
-</li>
-<li><ol>
+<ol>
 <li>最好的是用转录组进行基因的估计。</li>
 <li>没有转录组我们可以用同源基因组进行注释：GEMOMA</li>
 <li>也可以blast，用：augustus（conda braker2）、homology</li>
-</ol>
-</li>
-<li><ol>
-<li>注释完，再用EVM进行整合</li>
-</ol>
+<li><p>注释完，再用EVM进行整合</p>
+<p>这之后就可以进行钊哥写的orthoFinder进行单拷贝直系同源基因的提取了。后话了，我先把这个注释搞定，希望一周内能搞完吧。</p>
 </li>
 </ol>
-<p>​    这之后就可以进行钊哥写的orthoFinder进行单拷贝直系同源基因的提取了。后话了，我先把这个注释搞定，希望一周内能搞完吧。</p>
+</li>
+</ol>
 
   
   
@@ -514,7 +502,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-12T14:54:49+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-12T14:57:10+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2020年11月12日</p>
@@ -539,8 +527,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jungleblack007@gamil.com/2020/11/12/LC-WGS-assembly-and-annotation/&title=Low-Coverage Whole Genome Sequence assembly and annotation - Mushroom Monkey&summary=[toc]
-​    刚刚和邦叔聊了一下，大概了解了浅层基因组测序的基本思路：质量评估 -&gt; 删除不好的reads -&gt; 基因组组装 -&gt; 基因组注释 -&gt; 以及下一步的orthoFinder寻找单拷贝直系同源基因！"
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jungleblack007@gamil.com/2020/11/12/LC-WGS-assembly-and-annotation/&title=Low-Coverage Whole Genome Sequence assembly and annotation - Mushroom Monkey&summary=​    刚刚和邦叔聊了一下，大概了解了浅层基因组测序的基本思路：质量评估 -&gt; 删除不好的reads -&gt; 基因组组装 -&gt; 基因组注释 -&gt; 以及下一步的orthoFinder寻找单拷贝直系同源基因！"
           
           >
           
@@ -552,8 +539,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://jungleblack007@gamil.com/2020/11/12/LC-WGS-assembly-and-annotation/&title=Low-Coverage Whole Genome Sequence assembly and annotation - Mushroom Monkey&summary=[toc]
-​    刚刚和邦叔聊了一下，大概了解了浅层基因组测序的基本思路：质量评估 -&gt; 删除不好的reads -&gt; 基因组组装 -&gt; 基因组注释 -&gt; 以及下一步的orthoFinder寻找单拷贝直系同源基因！"
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://jungleblack007@gamil.com/2020/11/12/LC-WGS-assembly-and-annotation/&title=Low-Coverage Whole Genome Sequence assembly and annotation - Mushroom Monkey&summary=​    刚刚和邦叔聊了一下，大概了解了浅层基因组测序的基本思路：质量评估 -&gt; 删除不好的reads -&gt; 基因组组装 -&gt; 基因组注释 -&gt; 以及下一步的orthoFinder寻找单拷贝直系同源基因！"
           
           >
           
@@ -565,8 +551,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://jungleblack007@gamil.com/2020/11/12/LC-WGS-assembly-and-annotation/&title=Low-Coverage Whole Genome Sequence assembly and annotation - Mushroom Monkey&summary=[toc]
-​    刚刚和邦叔聊了一下，大概了解了浅层基因组测序的基本思路：质量评估 -&gt; 删除不好的reads -&gt; 基因组组装 -&gt; 基因组注释 -&gt; 以及下一步的orthoFinder寻找单拷贝直系同源基因！"
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://jungleblack007@gamil.com/2020/11/12/LC-WGS-assembly-and-annotation/&title=Low-Coverage Whole Genome Sequence assembly and annotation - Mushroom Monkey&summary=​    刚刚和邦叔聊了一下，大概了解了浅层基因组测序的基本思路：质量评估 -&gt; 删除不好的reads -&gt; 基因组组装 -&gt; 基因组注释 -&gt; 以及下一步的orthoFinder寻找单拷贝直系同源基因！"
           
           >
           
