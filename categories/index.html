@@ -21,13 +21,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>Starting blog - Mushroom Monkey</title>
-  
-    <meta name="keywords" content="blog,技术">
+  <title>所有分类 - Mushroom Monkey</title>
   
 
-  
-    <meta name="description" content="试试">
   
 
   <!-- feed -->
@@ -281,7 +277,7 @@
     <div id="l_cover">
   
     
-        <div id="full" class='cover-wrapper post dock' style="display: none;">
+        <div id="full" class='cover-wrapper category dock' style="display: none;">
           
             <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/jungleblack007/cdn/IMG_9692.JPG"></div>
           
@@ -344,262 +340,52 @@
       <div class='body-wrapper' id="pjax-container">
         
 
+
 <div class='l_main'>
-  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
-  
-
-
-  
-  <div class="article-meta" id="top">
-    
-    
-    
-      <h1 class="title">
-        Starting blog
-      </h1>
-      <div class='new-meta-box'>
-        
-          
-            
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="/assets/head.jpg">
-    <p>小黑Black_007</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年10月25日</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  <div class="new-meta-item browse leancloud">
-    <a class='notlink'>
-      
-      <div id="lc-pv" data-title="Starting blog" data-path="/2020/10/25/%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE/">
-        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
-        次浏览
-      </div>
-    </a>
-  </div>
-
-
-          
-        
-      </div>
-    
-  </div>
-
-
-  
-  <p>博客的模板基本上就是用这个yilim了，但是里面还有很多需要调节的东西，容我慢慢来。</p>
-<p>最近稍微有点忙，可能没时间详细弄博客了，先这样更新着吧，我尽量保证大事、小事都网上更，把这个做成一个完整的日志形式的，记录更多有意义的内容在其中，这样以后查信息的时候还都能查到！先这样吧，今天有一更！</p>
-<a id="more"></a>
-<p>首先说一下常用的几个命令吧，</p>
-<h2 id="关于常用命令"><a href="#关于常用命令" class="headerlink" title="关于常用命令"></a>关于常用命令</h2><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo clean //清除一下缓存</span><br><span class="line">hexo g  //生成静态页面</span><br><span class="line">hexo s //开启本地服务器</span><br><span class="line">hexo d   //查看后没有问题即可部署到github上</span><br><span class="line">hexo new "new article"</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="关于Yilim主题"><a href="#关于Yilim主题" class="headerlink" title="关于Yilim主题"></a>关于Yilim主题</h2><p>在设置这个主题的过程中我遇到了比较多的问题，现在一一解决。<span class="github-emoji"><span>✨</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2728.png?v8" class="lazyload" data-srcset="https://github.githubassets.com/images/icons/emoji/unicode/2728.png?v8" srcset="data:image/png;base64,666" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
-<h3 id="作者名不显示的问题："><a href="#作者名不显示的问题：" class="headerlink" title="作者名不显示的问题："></a>作者名不显示的问题：</h3><blockquote>
-<p>yilia的需要在主题下的_config.yml加入author: ,记得不是在menu:下</p>
-</blockquote>
-<h3 id="关于作者头像的问题："><a href="#关于作者头像的问题：" class="headerlink" title="关于作者头像的问题："></a>关于作者头像的问题：</h3><blockquote>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim yilia/_config.yml</span><br><span class="line"><span class="comment">#你的头像url</span></span><br><span class="line">avatar: /img/daerzi.jpg</span><br></pre></td></tr></tbody></table></figure>
-<p>链接：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/adb7640c97c2">https://www.jianshu.com/p/adb7640c97c2</a><br>来源：简书</p>
-</blockquote>
-<h3 id="图片不显示的问题："><a href="#图片不显示的问题：" class="headerlink" title="图片不显示的问题："></a>图片不显示的问题：</h3><blockquote>
-<p>修改博客根目录中_config.yml文件的配置项post_asset_folder为true：<br></p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">post_asset_folder: true</span><br></pre></td></tr></tbody></table></figure><br>完成此设置后，当你通过hexo new 文件名新建博客后，会产生一个和文件同名的文件夹。<p></p>
-<p>在博客根目录中下使用npm安装插件：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install https://github.com/CodeFalling/hexo-asset-image --save</span><br></pre></td></tr></tbody></table></figure>
-<p>作者：Gsdxiaohei<br>链接：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/ea78bdd0551f">https://www.jianshu.com/p/ea78bdd0551f</a><br>来源：简书<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
-</blockquote>
-<h3 id="关于文章配置"><a href="#关于文章配置" class="headerlink" title="关于文章配置"></a>关于文章配置</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">--- </span><br><span class="line">title: postName #文章页面上的显示名称，一般是中文</span><br><span class="line">date: 2013-12-02 15:30:16 #文章生成时间，一般不改，当然也可以任意修改 categories: 默认分类 #分类 </span><br><span class="line">tags: [tag1,tag2,tag3] #文章标签，可空，多标签请用格式，注意:后面有个空格 description: 附加一段文章摘要，字数最好在140字以内，会出现在meta的description里面</span><br><span class="line">---</span><br></pre></td></tr></tbody></table></figure>
-<hr>
-<p>相册功能暂未开启！留言功能正在开发！</p>
-<h3 id="试试Emoji"><a href="#试试Emoji" class="headerlink" title="试试Emoji"></a>试试Emoji</h3><p><span class="github-emoji"><span>😐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f610.png?v8" class="lazyload" data-srcset="https://github.githubassets.com/images/icons/emoji/unicode/1f610.png?v8" srcset="data:image/png;base64,666" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>😄</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f604.png?v8" class="lazyload" data-srcset="https://github.githubassets.com/images/icons/emoji/unicode/1f604.png?v8" srcset="data:image/png;base64,666" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> <span class="github-emoji"><span>😊</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f60a.png?v8" class="lazyload" data-srcset="https://github.githubassets.com/images/icons/emoji/unicode/1f60a.png?v8" srcset="data:image/png;base64,666" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> <span class="github-emoji"><span>😆</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f606.png?v8" class="lazyload" data-srcset="https://github.githubassets.com/images/icons/emoji/unicode/1f606.png?v8" srcset="data:image/png;base64,666" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>🐫</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f42b.png?v8" class="lazyload" data-srcset="https://github.githubassets.com/images/icons/emoji/unicode/1f42b.png?v8" srcset="data:image/png;base64,666" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
-<p>具体表格参考：<a target="_blank" rel="noopener" href="https://hasaik.com/posts/9b280ea3.html">https://hasaik.com/posts/9b280ea3.html</a></p>
-<p>在找Emoji的过程中，发现一个人用 <a target="_blank" rel="noopener" href="https://volantis.js.org/">Volantis</a>主题，也非常棒！先就这样吧，等再有时间了再换一个新的主题！</p>
-<h3 id="关于公式"><a href="#关于公式" class="headerlink" title="关于公式"></a>关于公式</h3><p>调试了一上午公式都没有解决掉，后来在<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44855907/article/details/105376826">基于Hexo Github搭建个人博客（二）：更改博客主题</a>这个帖子里把公式调整出来了。其实也很简单，就是把标题里面的mathjax打开就行了。</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">mathjax: true</span><br><span class="line">---</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="主题图片轮播"><a href="#主题图片轮播" class="headerlink" title="主题图片轮播"></a>主题图片轮播</h3><p>照这个链接搞的 <a target="_blank" rel="noopener" href="https://www.heson10.com/posts/19736.html">https://www.heson10.com/posts/19736.html</a></p>
-<p>但是失败了，总结原因应该是步骤中有一个：</p>
-<blockquote>
-<p>在themes\volantis\source\css\style.css中，增加代码：</p>
-<figure class="highlight css"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">if hexo-config('plugins.main_banner.enable')</span><br><span class="line">    <span class="keyword">@import</span> <span class="string">'_other/main_banner'</span></span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p>但是我没找到style.css的文件，自己创建一个会报错，我直接添加到style.styl中了。。。结果没有任何变化。</p>
-
-  
   
     
-    <div class='footer'>
-      
-      
-      
-      
-        <div class='donate'>
-          <div class='imgs'>
+      <div class='post-wrapper'>
+        <article id="cat" class="post article white-box reveal shadow">
+          <h2>所有分类</h2>
+          <div class="all-cats">
             
-              <img src='https://cdn.jsdelivr.net/gh/jungleblack007/images@master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20210221172923.jpg'>
-            
-              <img src='https://cdn.jsdelivr.net/gh/jungleblack007/images@master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20210221172929.png'>
+              
+                <a class="" href="/categories/%E6%B5%85%E5%B1%82%E5%9F%BA%E5%9B%A0%E7%BB%84%E6%B5%8B%E5%BA%8F/">
+                  <span><i class='fas fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;浅层基因组测序</span>
+                  <span class="title">
+                    (2)
+                  </span>
+                </a>
+              
+                <a class=" child" href="/categories/%E6%B5%85%E5%B1%82%E5%9F%BA%E5%9B%A0%E7%BB%84%E6%B5%8B%E5%BA%8F/%E6%B5%8B%E5%BA%8F%E7%BB%93%E6%9E%9C%E7%BB%84%E8%A3%85/">
+                  <span><i class='fas fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;测序结果组装</span>
+                  <span class="title">
+                    (1)
+                  </span>
+                </a>
+              
+                <a class="" href="/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/">
+                  <span><i class='fas fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;生物信息学</span>
+                  <span class="title">
+                    (2)
+                  </span>
+                </a>
+              
+                <a class="" href="/categories/%E8%98%91%E8%8F%87%E5%88%86%E7%B1%BB/">
+                  <span><i class='fas fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;蘑菇分类</span>
+                  <span class="title">
+                    (1)
+                  </span>
+                </a>
+              
             
           </div>
-        </div>
-      
-    </div>
-  
-  
+          <br>
+          
+        </article>
+      </div>
     
-
-
-  <div class='article-meta' id="bottom">
-    <div class='new-meta-box'>
-      
-        
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-10-30T22:52:38+08:00">
-  <a class='notlink'>
-    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年10月30日</p>
-  </a>
-</div>
-
-        
-      
-        
-          
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/blog/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>blog</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%8A%80%E6%9C%AF/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>技术</p></a></div>
-
-
-        
-      
-        
-          
-  <div class="new-meta-item share -mob-share-list">
-  <div class="-mob-share-list share-body">
-    
-      
-        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jungleblack007@gamil.com/2020/10/25/%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE/&title=Starting blog - Mushroom Monkey&summary=博客的模板基本上就是用这个yilim了，但是里面还有很多需要调节的东西，容我慢慢来。
-最近稍微有点忙，可能没时间详细弄博客了，先这样更新着吧，我尽量保证大事、小事都网上更，把这个做成一个完整的日志形式的，记录更多有意义的内容在其中，这样以后查信息的时候还都能查到！先这样吧，今天有一更！"
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://jungleblack007@gamil.com/2020/10/25/%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE/&title=Starting blog - Mushroom Monkey&summary=博客的模板基本上就是用这个yilim了，但是里面还有很多需要调节的东西，容我慢慢来。
-最近稍微有点忙，可能没时间详细弄博客了，先这样更新着吧，我尽量保证大事、小事都网上更，把这个做成一个完整的日志形式的，记录更多有意义的内容在其中，这样以后查信息的时候还都能查到！先这样吧，今天有一更！"
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://jungleblack007@gamil.com/2020/10/25/%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE/&title=Starting blog - Mushroom Monkey&summary=博客的模板基本上就是用这个yilim了，但是里面还有很多需要调节的东西，容我慢慢来。
-最近稍微有点忙，可能没时间详细弄博客了，先这样更新着吧，我尽量保证大事、小事都网上更，把这个做成一个完整的日志形式的，记录更多有意义的内容在其中，这样以后查信息的时候还都能查到！先这样吧，今天有一更！"
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
-          
-        </a>
-      
-    
-      
-        
-        <div class='hoverbox'>
-          <a class='share'><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/wechat.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/wechat.png" srcset="data:image/png;base64,666"></a>
-          <div class='target'>
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVgAAAFYCAAAAAAzB7ucAAAEYUlEQVR42u3aS5IkOQgFwLr/pbv3M5YW4kGgrDbXLn8K5MoFYPz8sV5ZPwjAgrXAggVrgV2B/QnX/zZ8+Py/3zv9/NPr0+c9xXe6/6kHWLBgwYIFCxYs2F3Y4wT4AXb6/afXVcjq86oeYMGCBQsWLFiwYO/APibAD9+vvt8tKJ5A3y5IwIIFCxYsWLBgwf5u2Cr8dmP7reeDBQsWLFiwYMGC/Tdg0326B67uW4UGCxYsWLBgwYIF+92w5QGFw0BSmG7DemogZX0SBixYsGDBggULFuwRbHV1G9/f/jr2AAsWLFiwYMGCBbsC211TBUPamE4T/nS/x+eBBQsWLFiwYMGCXYFNE+TpQKd+X41v6vxgwYIFCxYsWLBg78C+NRhc3a/baJ6GKw8igwULFixYsGDBgl2B7Tay0wR+6iCnvzstFNKGPFiwYMGCBQsWLNhd2O5G3QJgqmA4bXxPXyhYsGDBggULFizYu7Dp4MPUxXQvst2gbl40WLBgwYIFCxYs2Duw6cBFOYFuNrq7F50ObBzHCxYsWLBgwYIFC3YFNk2QpwYlqhd1GufbAyUf4wMLFixYsGDBggW7CtsNZLqwqB60+vzucx4HNsCCBQsWLFiwYMG+Cpsm/qcBpY3x6YIibZiXCxSwYMGCBQsWLFiwK7BpINMN626C3oWrNrY/vg8WLFiwYMGCBQt2BXbqAGmCPlUwTP8h4vOCBQsWLFiwYMGCvQrbbRB319uN6rca3mDBggULFixYsGB3YKug1QQ8bVwfHyQscLoFz8fXYMGCBQsWLFiwYFdgqwn7FMB0Q3yqEd4uaMCCBQsWLFiwYMGuwKYDDClIWijcKkjKBQhYsGDBggULFizYFdh0QKIaULr/dqHSLVjAggULFixYsGDB7sLGG718ESlAt0CICyKwYMGCBQsWLFiwK7DVxL5bWEwPTHThuw16sGDBggULFixYsHdhq2BTCX21QZ02xqt/mLjgAQsWLFiwYMGCBXsVthrY6e/eSvS7hUq1EPh4PrBgwYIFCxYsWLCrsNUDnsKlhchpXFON87SwAQsWLFiwYMGCBXsHdgp0qlHeHfToDpi04wQLFixYsGDBggV7BXZqIKKb2HcT/OmC4zhesGDBggULFixYsF8Bmw5wdBvh1cGQtHE/dSFgwYIFCxYsWLBg78Kmifn096vxpA3sNG6wYMGCBQsWLFiwd2G7a7vASAuN6kWmjW+wYMGCBQsWLFiwO7DdhPm0EV0FSC+yGs90Yx4sWLBgwYIFCxbsLuxUQTAFXY2r23CvFghgwYIFCxYsWLBgvwu2GshUAp42truN8KmCCCxYsGDBggULFuzvhK0m+q8NTDT3S88JFixYsGDBggUL9nfCnu6TNrDTwY+pQuE4PrBgwYIFCxYsWLBXYKcO1h28SKG6kO0GO1iwYMGCBQsWLNhV2OqqFgynje9q4ZLGmRYIj/uABQsWLFiwYMGCXYG1ZhdYsGAtsGDBWmBfXX8BTouPY4FvQzUAAAAASUVORK5CYII=">
-          </div>
-        </div>
-      
-    
-      
-        <a class="-mob-share-telegram" title="" rel="external nofollow noopener noreferrer noopener"
-          
-            target="_blank" href="https://t.me/share/url?url=http://jungleblack007@gamil.com/2020/10/25/%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE/&text=Starting blog - Mushroom Monkey"
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/telegram.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/telegram.png" srcset="data:image/png;base64,666">
-          
-        </a>
-      
-    
-  </div>
-</div>
-
-
-
-        
-      
-    </div>
-  </div>
-
-
-  
-  
-
-  
-    <div class="prev-next">
-      
-        <a class='prev' href='/2020/10/27/Syzygospora/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Syzygospora</p>
-          <p class='content'>​    今天，我才搞清楚之前在祁连拍的一种看起来像子囊菌的真菌真名叫做轭孢耳 Syzygospora。
-
-
-​    这个菌最有意思的地方不仅仅在于它是一个寄生性的真菌，还在于这个看起来像鹿花...</p>
-        </a>
-      
-      
-    </div>
-  
-</article>
-
-
-  
-
-  <article class="post white-box reveal shadow" id="comments">
-    <p ct><i class='fas fa-comments'></i> 评论</p>
-    
-    <div id="valine_container" class="valine_thread">
-  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
-</div>
-
-  </article>
-
-
-
-
-
-
 </div>
 <aside class='l_side'>
   
@@ -609,26 +395,11 @@
 
 
 
-  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
-    
-  <header>
-    
-      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
-    
-  </header>
-
-
-    <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-text">关于常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8EYilim%E4%B8%BB%E9%A2%98"><span class="toc-text">关于Yilim主题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%9C%E8%80%85%E5%90%8D%E4%B8%8D%E6%98%BE%E7%A4%BA%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%9A"><span class="toc-text">作者名不显示的问题：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E4%BD%9C%E8%80%85%E5%A4%B4%E5%83%8F%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%9A"><span class="toc-text">关于作者头像的问题：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E7%89%87%E4%B8%8D%E6%98%BE%E7%A4%BA%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%9A"><span class="toc-text">图片不显示的问题：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E6%96%87%E7%AB%A0%E9%85%8D%E7%BD%AE"><span class="toc-text">关于文章配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%95%E8%AF%95Emoji"><span class="toc-text">试试Emoji</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E5%85%AC%E5%BC%8F"><span class="toc-text">关于公式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E9%A2%98%E5%9B%BE%E7%89%87%E8%BD%AE%E6%92%AD"><span class="toc-text">主题图片轮播</span></a></li></ol></li></ol>
-    </div>
-  </section>
-
 
   
 
 
 </aside>
-
 
 
         
@@ -638,8 +409,8 @@
 
 <script>
   window.pdata={}
-  pdata.ispage=true;
-  pdata.postTitle="Starting blog";
+  pdata.ispage=false;
+  pdata.postTitle="";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 
