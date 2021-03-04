@@ -359,9 +359,9 @@
       
         <tags>
             
-            <tag> 齿裂菌属 </tag>
-            
             <tag> 网络图片收集 </tag>
+            
+            <tag> 齿裂菌属 </tag>
             
         </tags>
       
@@ -540,7 +540,7 @@
       <link href="2020/10/29/SESMNTD/"/>
       <url>2020/10/29/SESMNTD/</url>
       
-        <content type="html"><![CDATA[<p>这一篇主要是从山山师兄中期答辩学到的一个知识点，关于群落结构的亲缘关系。</p><!--toc--><!--readmore--><h1 id="关于内插法"><a href="#关于内插法" class="headerlink" title="关于内插法"></a>关于内插法</h1><blockquote><p>基于内插法假设，一个物种的分布应该在其海拔上下限区间内均匀分布，所观察到在海拔段上离散分布有可能是取样不足导致的取样偏误。</p></blockquote><p>翻译过来就是，如果一个物种在海拔100m和300m都出现了，那么这个物种应该在这个范围的海拔内都存在。所以就可以这样将物种的分布划分区间。</p><h1 id="系统发育多样性指标"><a href="#系统发育多样性指标" class="headerlink" title="系统发育多样性指标"></a>系统发育多样性指标</h1><p>这个可以用R中的picante计算，四个系统发育多样性指标。</p><p>Faith系统发育多样性（Faith’s PD）:</p><p>系统发育多样性标准净效应（SES.PD）:</p><script type="math/tex; mode=display">SES.PD=\frac{PD_{sample}-Mean_{randomsample}}{SD(PD_{randomsample})}</script><p>系统发育关系净效应（SES.MPD）:</p><script type="math/tex; mode=display">SES.MPD=\frac{MPD_{sample}-MEAN(MPD_{randomsample})}{SD(MPD_{randomsample})}</script><p>系统发育最近种间亲缘关系净效应（SES.MNTD）:</p><script type="math/tex; mode=display">SES.MNTD=\frac{MNTD_{sample}-MEAN(MNTD_{randomsample})}{SD(MNTD_{randomsample})}</script><blockquote><p>根据昨天向丫丫请教，$SES.MPD$主要衡量的是基部的支，$SES.MNTD$衡量的是末端的支。</p></blockquote><p>其实我想的是，这些系统发育的指标和生态位联合起来分析，应该能得到非常棒的结果。</p>]]></content>
+        <content type="html"><![CDATA[<p>这一篇主要是从山山师兄中期答辩学到的一个知识点，关于群落结构的亲缘关系。</p><!--toc--><!--readmore--><h1 id="关于内插法"><a href="#关于内插法" class="headerlink" title="关于内插法"></a>关于内插法</h1><blockquote><p>基于内插法假设，一个物种的分布应该在其海拔上下限区间内均匀分布，所观察到在海拔段上离散分布有可能是取样不足导致的取样偏误。</p></blockquote><p>翻译过来就是，如果一个物种在海拔100m和300m都出现了，那么这个物种应该在这个范围的海拔内都存在。所以就可以这样将物种的分布划分区间。</p><h1 id="系统发育多样性指标"><a href="#系统发育多样性指标" class="headerlink" title="系统发育多样性指标"></a>系统发育多样性指标</h1><p>这个可以用R中的picante计算，四个系统发育多样性指标。</p><p>Faith系统发育多样性（Faith’s PD）:</p><p>系统发育多样性标准净效应（SES.PD）:</p><script type="math/tex; mode=display">SES.PD=\frac{PD_{sample}-Mean_{randomsample}}{SD(PD_{randomsample})}</script><p>系统发育关系净效应（SES.MPD）:</p><script type="math/tex; mode=display">SES.MPD=\frac{MPD_{sample}-MEAN(MPD_{randomsample})}{SD(MPD_{randomsample})}</script><p>系统发育最近种间亲缘关系净效应（SES.MNTD）:</p><script type="math/tex; mode=display">SES.MNTD=\frac{MNTD_{sample}-MEAN(MNTD_{randomsample})}{SD(MNTD_{randomsample})}</script><blockquote><p>根据昨天向丫丫请教，$SES.MPD$主要衡量的是基部的支，$SES.MNTD$衡量的是末端的支。</p></blockquote><p>其实我想的是，这些系统发育的指标和生态位联合起来分析，应该能得到非常棒的结果。</p><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
       
       
       
@@ -565,7 +565,7 @@
       <link href="2020/10/27/Syzygospora/"/>
       <url>2020/10/27/Syzygospora/</url>
       
-        <content type="html"><![CDATA[<p>​    今天，我才搞清楚之前在祁连拍的一种看起来像子囊菌的真菌真名叫做轭孢耳 <em>Syzygospora</em>。</p><p><img src="/2020/10/27/Syzygospora/IMG_5528.JPG" class="lazyload" data-srcset="/2020/10/27/Syzygospora/IMG_5528.JPG" srcset="data:image/png;base64,666" alt="IMG_5528"></p><a id="more"></a><p>​    这个菌最有意思的地方不仅仅在于它是一个寄生性的真菌，还在于这个看起来像鹿花菌的菌体其实是蘑菇的本体形成的，就像虫瘿一样。轭孢耳寄生于如<em>Gymnopus</em>等寄主的表面，促进寄主细胞的加速分裂和畸形分化从而形成独特的形状，以利于轭孢耳本身的孢子扩散！太神奇了！</p><p><img src="/2020/10/27/Syzygospora/1.png" class="lazyload" data-srcset="/2020/10/27/Syzygospora/1.png" srcset="data:image/png;base64,666" alt=""></p>]]></content>
+        <content type="html"><![CDATA[<p>​    今天，我才搞清楚之前在祁连拍的一种看起来像子囊菌的真菌真名叫做轭孢耳 <em>Syzygospora</em>。</p><p><img src="/2020/10/27/Syzygospora/IMG_5528.JPG" class="lazyload" data-srcset="/2020/10/27/Syzygospora/IMG_5528.JPG" srcset="data:image/png;base64,666" alt="IMG_5528"></p><a id="more"></a><p>​    这个菌最有意思的地方不仅仅在于它是一个寄生性的真菌，还在于这个看起来像鹿花菌的菌体其实是蘑菇的本体形成的，就像虫瘿一样。轭孢耳寄生于如<em>Gymnopus</em>等寄主的表面，促进寄主细胞的加速分裂和畸形分化从而形成独特的形状，以利于轭孢耳本身的孢子扩散！太神奇了！</p><p><img src="/2020/10/27/Syzygospora/1.png" class="lazyload" data-srcset="/2020/10/27/Syzygospora/1.png" srcset="data:image/png;base64,666" alt=""></p><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
       
       
       
