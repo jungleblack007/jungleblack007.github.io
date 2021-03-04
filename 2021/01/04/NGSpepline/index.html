@@ -23,6 +23,8 @@
   
   <title>从浅层基因组测序到系统发育树的构建 - Mushroom Monkey</title>
   
+    <meta name="keywords" content="技术贴">
+  
 
   
     <meta name="description" content="​    Miniconda3环境安装 -&gt; 质控 -&gt; 组装 -&gt; 预测 -&gt; 提取单拷贝直系同源基因 -&gt; 建树">
@@ -373,7 +375,7 @@
   <div class='new-meta-item category'>
     <a class='notlink'>
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <a class="category-link" href="/categories/%E6%B5%85%E5%B1%82%E5%9F%BA%E5%9B%A0%E7%BB%84%E6%B5%8B%E5%BA%8F/">浅层基因组测序</a><span class="sep"></span><a class="category-link" href="/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/">生物信息学</a>
+      <a class="category-link" href="/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/">生物信息学</a><span class="sep"></span><a class="category-link" href="/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/%E6%B5%85%E5%B1%82%E5%9F%BA%E5%9B%A0%E7%BB%84%E6%B5%8B%E5%BA%8F/">浅层基因组测序</a>
     </a>
   </div>
 
@@ -414,7 +416,6 @@
   
   <p>​    Miniconda3环境安装 -&gt; 质控 -&gt; 组装 -&gt; 预测 -&gt; 提取单拷贝直系同源基因 -&gt; 建树</p>
 <a id="more"></a>
-<p>[toc]</p>
 <h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h2><p>​    用4个或者多个片段构建的系统发育树节点支持率不高，以致于很多的类群分支无法解析。为了解决这一问题，在植物方面用了ddRAD、浅层基因组测序、基因组重测序、转录组测序等各种测序方法，但是分析方法主要采用提取SNP、组装叶绿体或转录组提取单拷贝直系同源基因。目前，从浅层基因组测序提取单拷贝直系同源基因的研究我一个都没有看到，所以也是尝试着摸了一下这种方法，期望能得到高的节点支持率和稳定的拓扑结构。</p>
 <p>​    从2020年11月12号开始就一直在摸索这个从浅层基因组测序结果到系统发育树构建的流程探索，断断续续整了很久很久，终于是在邦叔和钊哥的指导下走完了整个流程。</p>
 <h2 id="2-材料和方法"><a href="#2-材料和方法" class="headerlink" title="2. 材料和方法"></a>2. 材料和方法</h2><h2 id="2-1-材料的选取"><a href="#2-1-材料的选取" class="headerlink" title="2.1 材料的选取"></a>2.1 材料的选取</h2><p>​    之所以选择浅层基因组测序，有很大一部分原因就是因为它可以使用硅胶干燥的分子材料，而且真菌的基因组比较小，大概也就50-100Mb，测5g的数据量也有50-100$\times$了，足够基因组的组装了。三代测序和转录组测序都需要液氮冷冻的材料，目前我并没有保存，明年如果采集到了拟口蘑属的材料会送测三代和转录组；不过目前也就是直接用分子材料测二代了。</p>
@@ -538,10 +539,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-22T21:25:53+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-23T15:00:45+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年2月22日</p>
+    <p>更新于：2021年2月23日</p>
   </a>
 </div>
 
@@ -549,6 +550,9 @@
       
         
           
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%8A%80%E6%9C%AF%E8%B4%B4/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>技术贴</p></a></div>
+
 
         
       
