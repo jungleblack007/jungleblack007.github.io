@@ -4,6 +4,87 @@
   
     
     <entry>
+      <title>关于本地BLAST的安装和使用</title>
+      <link href="2021/04/29/BLAST/"/>
+      <url>2021/04/29/BLAST/</url>
+      
+        <content type="html"><![CDATA[<p>介绍一种从基因组中提取片段的方法，很简单！</p><a id="more"></a><h1 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h1><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 安装blast</span></span><br><span class="line">wget https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ncbi-blast-2.11.0+-x64-linux.tar.gz</span><br><span class="line"><span class="meta">#</span><span class="bash"> 解压</span></span><br><span class="line">tar -zxvf ncbi-blast-2.11.0+-x64-linux.tar.gz  # 解压文件 </span><br><span class="line">echo 'PATH=$PATH:~/ncbi-blast-2.11.0+/' &gt;&gt; ~/.bashrc # 将路径加入到环境变量</span><br><span class="line">source ~/.bashrc # 重新编译路径</span><br><span class="line"><span class="meta">#</span><span class="bash"> 还要安装一个ncbi-blast</span></span><br><span class="line">sudo apt install ncbi-blast+-legacy</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 建库</span></span><br><span class="line">formatdb -i scaffolds.fasta -p F -o F</span><br><span class="line"><span class="meta">#</span><span class="bash"> 比对</span></span><br><span class="line">blastall -i query.fasta -d scaffolds.fasta -o G19.blast.out -p blastn</span><br><span class="line"><span class="meta">#</span><span class="bash"> -i：比对的序列文件</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -d：参考基因组库</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -o：输出文件</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -p：比对方式</span></span><br></pre></td></tr></tbody></table></figure><p>参考资料：</p><p><a href="https://www.jianshu.com/p/a912ad4a8dee">Blast - 简书 (jianshu.com)</a></p><p><a href="https://zhuanlan.zhihu.com/p/141644734">Linux 安装Blast本地版 - 知乎 (zhihu.com)</a></p><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
+      
+      
+      <categories>
+          
+          <category> 生物信息学 </category>
+          
+          <category> 浅层基因组测序 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 技术贴 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>记一次被蜱虫咬的经历</title>
+      <link href="2021/04/26/%E8%AE%B0%E4%B8%80%E6%AC%A1%E8%A2%AB%E8%9C%B1%E8%99%AB%E5%92%AC%E7%9A%84%E7%BB%8F%E5%8E%86/"/>
+      <url>2021/04/26/%E8%AE%B0%E4%B8%80%E6%AC%A1%E8%A2%AB%E8%9C%B1%E8%99%AB%E5%92%AC%E7%9A%84%E7%BB%8F%E5%8E%86/</url>
+      
+        <content type="html"><![CDATA[<a id="more"></a><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习工作 </category>
+          
+          <category> 出差趣事 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 蜱虫 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>暗盘菌Plectania</title>
+      <link href="2021/04/17/Plectania/"/>
+      <url>2021/04/17/Plectania/</url>
+      
+        <content type="html"><![CDATA[<p><img src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.6435-9/170733042_4275250525843198_8092154531527661571_n.jpg?_nc_cat=107&amp;ccb=1-3&amp;_nc_sid=825194&amp;_nc_ohc=TfzthY5oSJwAX_HP507&amp;_nc_ht=scontent-tpe1-1.xx&amp;oh=b39f79131afe78a7aa0fcc83df023b0b&amp;oe=609ED1A6" class="lazyload" data-srcset="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.6435-9/170733042_4275250525843198_8092154531527661571_n.jpg?_nc_cat=107&amp;ccb=1-3&amp;_nc_sid=825194&amp;_nc_ohc=TfzthY5oSJwAX_HP507&amp;_nc_ht=scontent-tpe1-1.xx&amp;oh=b39f79131afe78a7aa0fcc83df023b0b&amp;oe=609ED1A6" srcset="data:image/png;base64,666" alt="May be a closeup of outdoors"></p><a id="more"></a><h6 id="弯孢暗盘菌-Plectania-campylospora"><a href="#弯孢暗盘菌-Plectania-campylospora" class="headerlink" title="弯孢暗盘菌 Plectania campylospora"></a>弯孢暗盘菌 <em>Plectania campylospora</em></h6><p>@<a href="https://www.facebook.com/groups/444326349079658/user/100000748781094/?__cft__[0]=AZU-1pVBpF_wksUCSQFmyEk-jis4xJMFoLqmLWwsaS45pziuNh7v_kbJIxhS1xoJdNZkWBkoDbE19yHPcQE5UH5Ekf0rmwxL3PHBBWumCC8yfsy2PcoC-vMjU0AeUKt-xEAr_dvqRUDfqoprC0s1MZbzfd0h0JwHZ7h0BZWvz6idmss96_WSo3K1AKZCWba-g7E&amp;__tn__=-UC*F">Trevor Millichamp</a></p><p><em>Plectania campylospora</em>. A large cup fungus with the base contracting into a grooved stem.</p><p><img src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.6435-9/170733042_4275250525843198_8092154531527661571_n.jpg?_nc_cat=107&amp;ccb=1-3&amp;_nc_sid=825194&amp;_nc_ohc=TfzthY5oSJwAX_HP507&amp;_nc_ht=scontent-tpe1-1.xx&amp;oh=b39f79131afe78a7aa0fcc83df023b0b&amp;oe=609ED1A6" class="lazyload" data-srcset="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.6435-9/170733042_4275250525843198_8092154531527661571_n.jpg?_nc_cat=107&amp;ccb=1-3&amp;_nc_sid=825194&amp;_nc_ohc=TfzthY5oSJwAX_HP507&amp;_nc_ht=scontent-tpe1-1.xx&amp;oh=b39f79131afe78a7aa0fcc83df023b0b&amp;oe=609ED1A6" srcset="data:image/png;base64,666" alt="May be a closeup of outdoors"></p><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
+      
+      
+      <categories>
+          
+          <category> 蘑菇分类 </category>
+          
+          <category> 盘菌 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 网络图片收集 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>孢盘菌属Dactylospora</title>
       <link href="2021/03/24/Dactylospora/"/>
       <url>2021/03/24/Dactylospora/</url>
@@ -58,11 +139,11 @@
     
     
     <entry>
-      <title>读书笔记|犬类和它们的化石近亲</title>
+      <title>书评|犬类和它们的化石近亲</title>
       <link href="2021/03/13/%E7%8A%AC%E7%B1%BB%E5%92%8C%E5%AE%83%E4%BB%AC%E7%9A%84%E5%8C%96%E7%9F%B3%E8%BF%91%E4%BA%B2/"/>
       <url>2021/03/13/%E7%8A%AC%E7%B1%BB%E5%92%8C%E5%AE%83%E4%BB%AC%E7%9A%84%E5%8C%96%E7%9F%B3%E8%BF%91%E4%BA%B2/</url>
       
-        <content type="html"><![CDATA[<p>《犬类和它们的近亲化石》书如其名，讲述的是美国纽约自然博物馆的犬类化石三部专著的科普作品！</p><a id="more"></a><h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><h3 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h3><ol><li>犬类是北美起源，大约在5~7百万年前从<strong>新大陆扩散到旧大陆</strong>，约3百万年前扩散到南美洲。</li><li>犬类<strong>适应性辐射进化</strong>发生了三次，产生了三个亚科，分别是黄昏犬亚科、豪食犬亚科和<strong>真犬亚科</strong>。其中，现生的所有犬类都位于真犬亚科。</li><li>约40百万年前，全球生境逐渐由森林转向开阔的草原环境，犬类的化石反映了其<strong>奔跑能力的逐步增强</strong>。</li><li>食肉目具有的共同牙齿特征是最后一颗上前臼齿和第一颗下臼齿<strong>具有刀刃装的釉质齿冠</strong>，功能如同剪刀。这种牙齿叫做裂齿。</li></ol><h3 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h3><ol><li><p>白垩兽：出现颊齿，近似裂齿。75百万年前，晚白垩纪。</p></li><li><p>古灵猫科：出现缩减的裂齿。65百万年前，早古新世。</p></li><li><p>细齿兽科：真正的裂齿。60-50个百万年前，晚古新世至早始新世。</p></li><li><p>犬熊科：裂齿。8-45百万年前，中始新世至晚中新世。</p></li><li><p>鬣狗科：</p><p>与犬类的相似处：移动能力强、狩猎团体、群体行为</p></li><li><p>中兽：</p><p>偶蹄类</p></li><li><p>肉齿类：</p></li><li><p>袋鬣狗：</p></li><li><p>袋狼：</p></li></ol><h3 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h3><ol><li><h4 id="黄昏犬亚科"><a href="#黄昏犬亚科" class="headerlink" title="黄昏犬亚科"></a>黄昏犬亚科</h4><p>小型的原始犬类，起源于细齿兽科。标志：骨质外壳听泡</p></li><li><h4 id="豪食犬亚科"><a href="#豪食犬亚科" class="headerlink" title="豪食犬亚科"></a>豪食犬亚科</h4><p>豪食亚犬经历了从肉食到杂食的过程，可能是受到早期黄昏亚犬的生态位挤压；直到猫齿犬亚族的出现，才又逐步向纯食肉进化。</p></li><li><h4 id="真犬亚科"><a href="#真犬亚科" class="headerlink" title="真犬亚科"></a>真犬亚科</h4><p>一个新的适应特征是额骨中鼻窦增大。</p></li></ol><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
+        <content type="html"><![CDATA[<p>《犬类和它们的近亲化石》书如其名，讲述的是美国纽约自然博物馆的犬类化石三部专著的科普作品！</p><a id="more"></a><h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><h3 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h3><ol><li>犬类是北美起源，大约在5~7百万年前从<strong>新大陆扩散到旧大陆</strong>，约3百万年前扩散到南美洲。</li><li>犬类<strong>适应性辐射进化</strong>发生了三次，产生了三个亚科，分别是黄昏犬亚科、豪食犬亚科和<strong>真犬亚科</strong>。其中，现生的所有犬类都位于真犬亚科。</li><li>约40百万年前，全球生境逐渐由森林转向开阔的草原环境，犬类的化石反映了其<strong>奔跑能力的逐步增强</strong>。</li><li>食肉目具有的共同牙齿特征是最后一颗上前臼齿和第一颗下臼齿<strong>具有刀刃装的釉质齿冠</strong>，功能如同剪刀。这种牙齿叫做裂齿。</li></ol><h3 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h3><ol><li><p>白垩兽：</p><p>出现颊齿，近似裂齿。75百万年前，晚白垩纪。</p></li><li><p>古灵猫科：</p><p>出现缩减的裂齿。65百万年前，早古新世。与现今的食肉目各科没有关系。</p></li><li><p>细齿兽科：</p><p>真正的裂齿。60-50个百万年前，晚古新世至早始新世。现今食肉目各科或全部的祖先。</p></li><li><p>犬熊科：</p><p>裂齿。8-45百万年前，中始新世至晚中新世。</p></li><li><p>鬣狗科：</p><p>与犬类的相似处：移动能力强、狩猎团体、群体行为</p></li><li><p>中兽：</p><p>偶蹄类，大型猎食者。</p></li><li><p>肉齿类：</p><p>始新世真正的顶级肉食者。</p></li><li><p>袋鬣狗：</p><p>南美洲的顶级猎食者。可能因犬类的出现而灭绝。</p></li><li><p>袋狼：</p></li></ol><h3 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h3><ol><li><h4 id="黄昏犬亚科"><a href="#黄昏犬亚科" class="headerlink" title="黄昏犬亚科"></a>黄昏犬亚科</h4><p>小型的原始犬类，起源于细齿兽科。标志：骨质外壳听泡</p></li><li><h4 id="豪食犬亚科"><a href="#豪食犬亚科" class="headerlink" title="豪食犬亚科"></a>豪食犬亚科</h4><p>豪食亚犬经历了从肉食到杂食的过程，可能是受到早期黄昏亚犬的生态位挤压；直到猫齿犬亚族的出现，才又逐步向纯食肉进化。</p></li><li><h4 id="真犬亚科"><a href="#真犬亚科" class="headerlink" title="真犬亚科"></a>真犬亚科</h4><p>一个新的适应特征是额骨中鼻窦增大。</p></li></ol><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
       
       
       <categories>
