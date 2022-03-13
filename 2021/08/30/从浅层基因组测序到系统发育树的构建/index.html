@@ -20,10 +20,10 @@
   <meta content="Mushroom Monkey" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1637046600651" as="style">
+  <link rel="preload" href="/css/style.css?time=1647162369392" as="style">
   <!-- 页面元数据 -->
   <title>从浅层基因组测序到系统发育树的构建 - Mushroom Monkey</title>
-  <meta name="keywords" content="大型真菌,蘑菇,系统发育,宏基因组">
+  <meta name="keywords" content="生物信息学,大型真菌,蘑菇,系统发育,宏基因组">
   <meta name="description" content="Miniconda3环境安装 -&gt; 质控 -&gt; 组装 -&gt; 预测 -&gt; 提取单拷贝直系同源基因 -&gt; 建树">
 <meta property="og:type" content="article">
 <meta property="og:title" content="从浅层基因组测序到系统发育树的构建">
@@ -33,9 +33,9 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2021-08-29T16:45:07.000Z">
-<meta property="article:modified_time" content="2021-08-29T16:54:45.392Z">
+<meta property="article:modified_time" content="2021-12-10T16:50:44.431Z">
 <meta property="article:author" content="小黑Black_007">
-<meta property="article:tag" content="大型真菌,蘑菇,系统发育,宏基因组">
+<meta property="article:tag" content="生物信息学">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
   <!-- feed -->
@@ -1661,8 +1661,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1637046600651" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1637046600651"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1647162369392" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1647162369392"></noscript>
   
 <script>
 if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
@@ -2168,7 +2168,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <h4 id="GenomaThreader"><a href="#GenomaThreader" class="headerlink" title="GenomaThreader"></a>GenomaThreader</h4><p>​    同源预测软件。</p>
 <p>​    首先要在NCBI上下载近缘物种的蛋白注释序列，如下图。首先在Genome里面搜索需要的物种，以<em>Agaricus bisporus</em>为例，然后点击”Download sequences in FASTA format for genome, transcript, protein”中的protein就可以下载到蛋白序列了。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/jungleblack007/images@master/image-20210104204245391.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/jungleblack007/images@master/image-20210104204245391.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20210104204245391"></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">conda install genomethreader</span><br><span class="line"></span><br><span class="line"><span class="comment"># 可以下载多个蛋白序列，然后cat到一个文件中</span></span><br><span class="line">cat Armillaria_solidipes.faa\</span><br><span class="line">	Gymnopilus_dilepis.faa\</span><br><span class="line">	Mycena_chlorophos.faa\</span><br><span class="line">	Pterula_gracilis.faa\</span><br><span class="line">	Tricholoma_musutake.faa &gt;all.pep.fa</span><br><span class="line"><span class="comment"># 使用TBLASTN确定匹配到基因组的蛋白序列</span></span><br><span class="line">makeblastdb -<span class="keyword">in</span> spades_result/contigs.fasta -parse_seqids -dbtype nucl -out index/ding384</span><br><span class="line"><span class="comment"># tblastn比对</span></span><br><span class="line">tblastn -query ../all.pep.fa -out ding384.blast -db index/ding384 -outfmt 6 -evalue 1e-10 -num_threads 8 -qcov_hsp_perc 50.0 -num_alignments 5</span><br><span class="line"><span class="comment"># 提取匹配到基因组的蛋白序列</span></span><br><span class="line">awk <span class="string">&#x27;&#123;print $1&#125;&#x27;</span> ding384.blast &gt;ding384.list</span><br><span class="line"><span class="comment"># 安装一下john，以调用unique函数</span></span><br><span class="line">sudo apt install john</span><br><span class="line">sort ding384.list| uniq &gt;ding384.ho.list</span><br><span class="line"><span class="comment"># 安装seqkit</span></span><br><span class="line">conda install seqkit</span><br><span class="line">seqkit seq ../all.pep.fa -w 0 &gt; all.fa</span><br><span class="line">cat ding384.ho.list | <span class="keyword">while</span> <span class="built_in">read</span> line;<span class="keyword">do</span></span><br><span class="line">	grep <span class="string">&quot;<span class="variable">$line</span>&quot;</span> -A 1 all.fa &gt;<span class="variable">$line</span>.1;</span><br><span class="line"><span class="keyword">done</span>;</span><br><span class="line">cat *.1 &gt; ding384.homo.fa;</span><br><span class="line">rm -rf *.1</span><br><span class="line"><span class="comment"># 使用gth进行同源注释</span></span><br><span class="line">gth -genomic spades_result/contigs.fasta -protein ding384.homo.fa -intermediate -gff3out &gt; ding384_gth.gff</span><br><span class="line"></span><br><span class="line">grep -v <span class="string">&quot;^#&quot;</span> ding384_gth.gff | grep -v <span class="string">&quot;prime_cis_splice_site&quot;</span> | awk -F <span class="string">&quot;;&quot;</span> <span class="string">&#x27;&#123;print$1&#125;&#x27;</span>&gt;ding384.homo.gff</span><br><span class="line">less ding384.homo.gff</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">conda install genomethreader</span><br><span class="line"></span><br><span class="line"><span class="comment"># 可以下载多个蛋白序列，然后cat到一个文件中</span></span><br><span class="line">cat Armillaria_solidipes.faa\</span><br><span class="line">    Gymnopilus_dilepis.faa\</span><br><span class="line">    Mycena_chlorophos.faa\</span><br><span class="line">    Pterula_gracilis.faa\</span><br><span class="line">    Tricholoma_musutake.faa &gt;all.pep.fa</span><br><span class="line"><span class="comment"># 使用TBLASTN确定匹配到基因组的蛋白序列</span></span><br><span class="line">makeblastdb -<span class="keyword">in</span> spades_result/contigs.fasta -parse_seqids -dbtype nucl -out index/ding384</span><br><span class="line"><span class="comment"># tblastn比对</span></span><br><span class="line">tblastn -query ../all.pep.fa -out ding384.blast -db index/ding384 -outfmt 6 -evalue 1e-10 -num_threads 8 -qcov_hsp_perc 50.0 -num_alignments 5</span><br><span class="line"><span class="comment"># 提取匹配到基因组的蛋白序列</span></span><br><span class="line">awk <span class="string">&#x27;&#123;print $1&#125;&#x27;</span> ding384.blast &gt;ding384.list</span><br><span class="line"><span class="comment"># 安装一下john，以调用unique函数</span></span><br><span class="line">sudo apt install john</span><br><span class="line">sort ding384.list| uniq &gt;ding384.ho.list</span><br><span class="line"><span class="comment"># 安装seqkit</span></span><br><span class="line">conda install seqkit</span><br><span class="line">seqkit seq ../all.pep.fa -w 0 &gt; all.fa</span><br><span class="line">cat ding384.ho.list | <span class="keyword">while</span> <span class="built_in">read</span> line;<span class="keyword">do</span></span><br><span class="line">    grep <span class="string">&quot;<span class="variable">$line</span>&quot;</span> -A 1 all.fa &gt;<span class="variable">$line</span>.1;</span><br><span class="line"><span class="keyword">done</span>;</span><br><span class="line">cat *.1 &gt; ding384.homo.fa;</span><br><span class="line">rm -rf *.1</span><br><span class="line"><span class="comment"># 使用gth进行同源注释</span></span><br><span class="line">gth -genomic spades_result/contigs.fasta -protein ding384.homo.fa -intermediate -gff3out &gt; ding384_gth.gff</span><br><span class="line"></span><br><span class="line">grep -v <span class="string">&quot;^#&quot;</span> ding384_gth.gff | grep -v <span class="string">&quot;prime_cis_splice_site&quot;</span> | awk -F <span class="string">&quot;;&quot;</span> <span class="string">&#x27;&#123;print$1&#125;&#x27;</span>&gt;ding384.homo.gff</span><br><span class="line">less ding384.homo.gff</span><br></pre></td></tr></table></figure>
 
 <p>钊哥师姐写的脚本，change-gff_lym.py</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/lustre/home/guohan_lab/local/python-3.6/bin/python3</span></span><br><span class="line"><span class="comment">#liyumei</span></span><br><span class="line"><span class="comment">#./change-name_lym.py proteinprediction.gff proteinprediction.gff proteinprediction_r.gff</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line">fout = <span class="built_in">open</span>(sys.argv[<span class="number">3</span>],<span class="string">&#x27;w&#x27;</span>)</span><br><span class="line"></span><br><span class="line">ref_dict=&#123;&#125;</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(sys.argv[<span class="number">1</span>]) <span class="keyword">as</span> gff:</span><br><span class="line">        <span class="keyword">for</span> line <span class="keyword">in</span> gff:</span><br><span class="line">                line_s = line.strip().split(<span class="string">&#x27;\t&#x27;</span>)</span><br><span class="line">                <span class="keyword">if</span> <span class="string">&#x27;gene&#x27;</span> == line_s[<span class="number">2</span>]:</span><br><span class="line">                        ref_g = re.split(<span class="string">&#x27;=&#x27;</span>,line_s[<span class="number">8</span>])</span><br><span class="line">                        ref_gene = ref_g[<span class="number">1</span>]</span><br><span class="line">                        ref_dict[ref_gene]=[]</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                        pos = line_s[<span class="number">3</span>]</span><br><span class="line">                        ref_dict[ref_gene].append(pos)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(sys.argv[<span class="number">2</span>]) <span class="keyword">as</span> gff_r:</span><br><span class="line">        <span class="keyword">for</span> eachline <span class="keyword">in</span> gff_r:</span><br><span class="line">                i = eachline.strip().split(<span class="string">&#x27;\t&#x27;</span>)</span><br><span class="line">                info = re.split(<span class="string">&#x27;=&#x27;</span>,i[<span class="number">8</span>])</span><br><span class="line">                name = info[<span class="number">1</span>]</span><br><span class="line">                ref_set = []</span><br><span class="line">                <span class="keyword">for</span> n <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="number">8</span>):</span><br><span class="line">                        ref_set.append(i[n])</span><br><span class="line">                ref_list = <span class="string">&#x27;\t&#x27;</span>.join(ref_set)</span><br><span class="line">                ref_set1 = [<span class="string">&#x27;CDS&#x27;</span> <span class="keyword">if</span> x == <span class="string">&#x27;exon&#x27;</span> <span class="keyword">else</span> x <span class="keyword">for</span> x <span class="keyword">in</span> ref_set]</span><br><span class="line">                ref_list1 = <span class="string">&#x27;\t&#x27;</span>.join(ref_set1)</span><br><span class="line">                <span class="keyword">if</span> <span class="string">&#x27;gene&#x27;</span> == i[<span class="number">2</span>]:</span><br><span class="line">                        fout.write(eachline)</span><br><span class="line">                <span class="keyword">elif</span> <span class="string">&#x27;exon&#x27;</span> == i[<span class="number">2</span>]:</span><br><span class="line">                        <span class="keyword">if</span> name <span class="keyword">in</span> ref_dict:</span><br><span class="line">                                vs = ref_dict[name]</span><br><span class="line">                                len_vs = <span class="built_in">len</span>(vs)</span><br><span class="line">                                <span class="keyword">for</span> a <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,len_vs):</span><br><span class="line">                                        <span class="keyword">if</span> vs[a] == i[<span class="number">3</span>]:</span><br><span class="line">                                                b = vs.index(vs[a])</span><br><span class="line">                                                fout.write(<span class="string">&#x27;%s\tID=%s.t%d;Parent=%s\n&#x27;</span>%(ref_list,name,b+<span class="number">1</span>,name))</span><br><span class="line">                                                fout.write(<span class="string">&#x27;%s\tID=%s.c%d;Parent=%s\n&#x27;</span>%(ref_list1,name,b+<span class="number">1</span>,name))</span><br><span class="line">fout.close()</span><br></pre></td></tr></table></figure>
@@ -2201,15 +2201,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 <h3 id="2-2-5-利用单拷贝知悉同源基因构建系统发育树"><a href="#2-2-5-利用单拷贝知悉同源基因构建系统发育树" class="headerlink" title="2.2.5 利用单拷贝知悉同源基因构建系统发育树"></a>2.2.5 利用单拷贝知悉同源基因构建系统发育树</h3><p>​    本来系统发育树的构建已经写过很多次了，但是发现用超多片段构建和少数片段构建的差异还是挺大的，也是摸索了好几天，还是记录一下吧。</p>
 <h4 id="Mafft"><a href="#Mafft" class="headerlink" title="Mafft"></a>Mafft</h4><p>​    序列比对</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># mafft直接下载安装</span></span><br><span class="line">wget https://mafft.cbrc.jp/alignment/software/mafft_7.475-1_amd64.deb  </span><br><span class="line">sudo dpkg -i mafft_7.475-1_amd64.deb</span><br><span class="line">mafft -h</span><br><span class="line"></span><br><span class="line"><span class="comment"># 序列批量比对的脚本</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> *.fa;<span class="keyword">do</span></span><br><span class="line">	linsi <span class="variable">$&#123;i&#125;</span> &gt; <span class="variable">$&#123;i&#125;</span>.mafft;</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># mafft直接下载安装</span></span><br><span class="line">wget https://mafft.cbrc.jp/alignment/software/mafft_7.475-1_amd64.deb  </span><br><span class="line">sudo dpkg -i mafft_7.475-1_amd64.deb</span><br><span class="line">mafft -h</span><br><span class="line"></span><br><span class="line"><span class="comment"># 序列批量比对的脚本</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> *.fa;<span class="keyword">do</span></span><br><span class="line">    linsi <span class="variable">$&#123;i&#125;</span> &gt; <span class="variable">$&#123;i&#125;</span>.mafft;</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
 
 <p>​    mafft的使用可以看说明书，我个人的习惯是在每一步的后面加上这一步运行的软件名作为后缀</p>
 <h4 id="Gblocks"><a href="#Gblocks" class="headerlink" title="Gblocks"></a>Gblocks</h4><p>​    提取保守区域序列</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># gblocks直接下载安装</span></span><br><span class="line">wget http://molevol.cmima.csic.es/castresana/Gblocks/Gblocks_Linux64_0.91b.tar.Z</span><br><span class="line">sudo apt-get install -y ncompress</span><br><span class="line">tar Zxf Gblocks_Linux64_0.91b.tar.Z</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;PATH=$PATH:~/Gblocks_0.91b/&#x27;</span> &gt;&gt; ~/.bashrc</span><br><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br><span class="line">Gblocks -h</span><br><span class="line"><span class="comment"># &#x27;PATH=$PATH:~/Gblocks_0.91b/&#x27;这里要添加自己下载的路径</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> *.mafft;<span class="keyword">do</span></span><br><span class="line">	Gblocks <span class="variable">$i</span> -b4=2 -b5=h -t=p -e=.gblocks;</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># gblocks直接下载安装</span></span><br><span class="line">wget http://molevol.cmima.csic.es/castresana/Gblocks/Gblocks_Linux64_0.91b.tar.Z</span><br><span class="line">sudo apt-get install -y ncompress</span><br><span class="line">tar Zxf Gblocks_Linux64_0.91b.tar.Z</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;PATH=$PATH:~/Gblocks_0.91b/&#x27;</span> &gt;&gt; ~/.bashrc</span><br><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br><span class="line">Gblocks -h</span><br><span class="line"><span class="comment"># &#x27;PATH=$PATH:~/Gblocks_0.91b/&#x27;这里要添加自己下载的路径</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> *.mafft;<span class="keyword">do</span></span><br><span class="line">    Gblocks <span class="variable">$i</span> -b4=2 -b5=h -t=p -e=.gblocks;</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
 
 <h4 id="Seqkit"><a href="#Seqkit" class="headerlink" title="Seqkit"></a>Seqkit</h4><p>​    这个是序列包，可以花式处理序列，非常好用。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># conda安装seqkit</span></span><br><span class="line">conda install seqkit</span><br><span class="line"><span class="comment"># 序列排序</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> *.mafft-gb;<span class="keyword">do</span></span><br><span class="line">	seqkit sort <span class="variable">$i</span> &gt; <span class="variable">$i</span>.sort;</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 多行序列合并成一行</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> $.sort;<span class="keyword">do</span></span><br><span class="line">	seqkit seq <span class="variable">$i</span> -w 0 &gt; <span class="variable">$i</span>.seq;</span><br><span class="line">	<span class="keyword">done</span></span><br></pre></td></tr></table></figure>
-
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># conda安装seqkit</span></span><br><span class="line">conda install seqkit</span><br><span class="line"><span class="comment"># 序列排序</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> *.mafft-gb;<span class="keyword">do</span></span><br><span class="line">    seqkit sort <span class="variable">$i</span> &gt; <span class="variable">$i</span>.sort;</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 多行序列合并成一行</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> $.sort;<span class="keyword">do</span></span><br><span class="line">    seqkit seq <span class="variable">$i</span> -w 0 &gt; <span class="variable">$i</span>.seq;</span><br><span class="line">    <span class="keyword">done</span></span><br></pre></td></tr></table></figure>
 
 </div>
   
@@ -2245,10 +2244,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-08-30T00:54:45+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-12-11T00:50:44+08:00">
   <a class='notlink' href="/" onclick="return false;" title="Click me!" >
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年8月30日</p>
+    <p>更新于：2021年12月11日</p>
   </a>
 </div>
 
@@ -2256,6 +2255,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         
           
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>生物信息学</p></a></div>
+
 
         
       
@@ -2795,8 +2797,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast == "undefined") {
-      volantis.css('/css/message.css?time=1637046600651')
-      volantis.js('/js/message.js?time=1637046600651', () => {
+      volantis.css('/css/message.css?time=1647162369392')
+      volantis.js('/js/message.js?time=1647162369392', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -2840,8 +2842,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast == "undefined") {
-      volantis.css('/css/message.css?time=1637046600651')
-      volantis.js('/js/message.js?time=1637046600651', () => {
+      volantis.css('/css/message.css?time=1647162369392')
+      volantis.js('/js/message.js?time=1647162369392', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -3097,7 +3099,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       volantis.APlayerController = {};
     
-    volantis.js('/js/rightMenu.js?time=1637046600651')
+    volantis.js('/js/rightMenu.js?time=1647162369392')
   </script>
 
 
@@ -3111,19 +3113,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1637046600651")
+        volantis.js("/js/plugins/sites.js?time=1647162369392")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1637046600651")
+        volantis.js("/js/plugins/friends.js?time=1647162369392")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1637046600651")
+        volantis.js("/js/plugins/contributors.js?time=1647162369392")
       }
     
   };
@@ -3233,7 +3235,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-<script src="/js/app.js?time=1637046600651.js"></script>
+<script src="/js/app.js?time=1647162369392.js"></script>
 
 
 <!-- optional -->
@@ -3246,7 +3248,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1637046600651");
+    return volantis.js("/js/search/hexo.js?time=1647162369392");
   }
 
   function loadSearchService() {
@@ -3491,7 +3493,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Mushroom Monkey","url":"http://jungleblack007@gamil.com/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"sameAs":["https://github.com/volantis-x"]},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://jungleblack007@gamil.com/","name":"Mushroom Monkey"}},{"@type":"ListItem","position":3,"item":{"@id":"http://jungleblack007@gamil.com/2021/08/30/从浅层基因组测序到系统发育树的构建/","name":"从浅层基因组测序到系统发育树的构建"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"从浅层基因组测序到系统发育树的构建","description":"Miniconda3环境安装 -&gt; 质控 -&gt; 组装 -&gt; 预测 -&gt; 提取单拷贝直系同源基因 -&gt; 建树","datePublished":"2021-08-29T16:45:07.000Z","dateModified":"2021-08-29T16:54:45.392Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://jungleblack007@gamil.com/2021/08/30/%E4%BB%8E%E6%B5%85%E5%B1%82%E5%9F%BA%E5%9B%A0%E7%BB%84%E6%B5%8B%E5%BA%8F%E5%88%B0%E7%B3%BB%E7%BB%9F%E5%8F%91%E8%82%B2%E6%A0%91%E7%9A%84%E6%9E%84%E5%BB%BA/"},"author":{"@type":"Person"},"publisher":{"@type":"Organization","name":"Mushroom Monkey","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://jungleblack007@gamil.com/2021/08/30/%E4%BB%8E%E6%B5%85%E5%B1%82%E5%9F%BA%E5%9B%A0%E7%BB%84%E6%B5%8B%E5%BA%8F%E5%88%B0%E7%B3%BB%E7%BB%9F%E5%8F%91%E8%82%B2%E6%A0%91%E7%9A%84%E6%9E%84%E5%BB%BA/","wordCount":68}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Mushroom Monkey","url":"http://jungleblack007@gamil.com/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"sameAs":["https://github.com/volantis-x"]},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://jungleblack007@gamil.com/","name":"Mushroom Monkey"}},{"@type":"ListItem","position":3,"item":{"@id":"http://jungleblack007@gamil.com/2021/08/30/从浅层基因组测序到系统发育树的构建/","name":"从浅层基因组测序到系统发育树的构建"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"从浅层基因组测序到系统发育树的构建","description":"Miniconda3环境安装 -&gt; 质控 -&gt; 组装 -&gt; 预测 -&gt; 提取单拷贝直系同源基因 -&gt; 建树","datePublished":"2021-08-29T16:45:07.000Z","dateModified":"2021-12-10T16:50:44.431Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://jungleblack007@gamil.com/2021/08/30/%E4%BB%8E%E6%B5%85%E5%B1%82%E5%9F%BA%E5%9B%A0%E7%BB%84%E6%B5%8B%E5%BA%8F%E5%88%B0%E7%B3%BB%E7%BB%9F%E5%8F%91%E8%82%B2%E6%A0%91%E7%9A%84%E6%9E%84%E5%BB%BA/"},"author":{"@type":"Person"},"publisher":{"@type":"Organization","name":"Mushroom Monkey","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://jungleblack007@gamil.com/2021/08/30/%E4%BB%8E%E6%B5%85%E5%B1%82%E5%9F%BA%E5%9B%A0%E7%BB%84%E6%B5%8B%E5%BA%8F%E5%88%B0%E7%B3%BB%E7%BB%9F%E5%8F%91%E8%82%B2%E6%A0%91%E7%9A%84%E6%9E%84%E5%BB%BA/","wordCount":68,"keywords":"生物信息学"}]</script>
 
 
 <!-- more -->
