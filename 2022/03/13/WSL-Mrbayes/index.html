@@ -4,8 +4,8 @@
   <meta name="generator" content="Hexo 5.4.0">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="http://jungleblack007@gamil.com/tags/photos/"/>
+  
+  <link rel="canonical" href="http://jungleblack007@gamil.com/2022/03/13/wsl-mrbayes/"/>
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
   <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
@@ -20,20 +20,22 @@
   <meta content="Mushroom Monkey" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1647162876456" as="style">
+  <link rel="preload" href="/css/style.css?time=1647162876378" as="style">
   <!-- 页面元数据 -->
-  <title>标签：photos - Mushroom Monkey</title>
-  <meta name="keywords" content="大型真菌,蘑菇,系统发育,宏基因组">
-  <meta name="description" content="Up主是骨灰级蘑菇爱好者，喜欢蘑菇分类和鉴定；最近也在学习一些系统发育、宏基因组相关的知识，也会上传一些教程在这里。欢迎大家发图片给UP主鉴定，当然能采集蘑菇标本最好啦~">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Mushroom Monkey">
-<meta property="og:url" content="http://jungleblack007@gamil.com/tags/photos/index.html">
+  <title>WSL_Mrbayes - Mushroom Monkey</title>
+  <meta name="keywords" content="生物信息学,大型真菌,蘑菇,系统发育,宏基因组">
+  <meta name="description" content="Win子系统多线程Bayes构建1. win子系统的安装ubuntu（1）启动开发人员模式Windows系统设置 -&gt; 更新和安全 -&gt; 开发者选项 -&gt; 开发人员模式   （2）打开window 子系统 linuxWindows系统设置 -&gt; 应用 -&gt; 程序和功能 -&gt; 启动或关闭windows功能 -&gt; 适用于Linux的Windows子系统   （">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WSL_Mrbayes">
+<meta property="og:url" content="http://jungleblack007@gamil.com/2022/03/13/WSL-Mrbayes/index.html">
 <meta property="og:site_name" content="Mushroom Monkey">
-<meta property="og:description" content="Up主是骨灰级蘑菇爱好者，喜欢蘑菇分类和鉴定；最近也在学习一些系统发育、宏基因组相关的知识，也会上传一些教程在这里。欢迎大家发图片给UP主鉴定，当然能采集蘑菇标本最好啦~">
+<meta property="og:description" content="Win子系统多线程Bayes构建1. win子系统的安装ubuntu（1）启动开发人员模式Windows系统设置 -&gt; 更新和安全 -&gt; 开发者选项 -&gt; 开发人员模式   （2）打开window 子系统 linuxWindows系统设置 -&gt; 应用 -&gt; 程序和功能 -&gt; 启动或关闭windows功能 -&gt; 适用于Linux的Windows子系统   （">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2022-03-13T09:07:22.000Z">
+<meta property="article:modified_time" content="2022-03-13T09:09:24.075Z">
 <meta property="article:author" content="小黑Black_007">
-<meta property="article:tag" content="大型真菌,蘑菇,系统发育,宏基因组">
+<meta property="article:tag" content="生物信息学">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
   <!-- feed -->
@@ -1659,8 +1661,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1647162876456" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1647162876456"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1647162876378" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1647162876378"></noscript>
   
 <script>
 if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
@@ -1974,7 +1976,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="none" class='cover-wrapper  dock' style="display: none;">
+      <div id="none" class='cover-wrapper post dock' style="display: none;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/jungleblack007/cdn/IMG_9692.JPG"></div>
 
@@ -2036,84 +2038,265 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="safearea">
         <div class="body-wrapper" id="pjax-container">
           
-
 <div id="l_main" class=''>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
   
+
+
+  
+  <div class="article-meta" id="top">
     
-      
-  <section class="post-list">
     
-      
+    
+      <h1 class="title">
+        WSL_Mrbayes
+      </h1>
+      <div class='new-meta-box'>
         
           
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="" alt="This is a picture without description" >
+    <p>小黑Black_007</p>
+  </a>
+</div>
+
+          
         
-      
-    
-    
-      
+          
+            
+
+          
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/11/04/PhotosfromAxford/">
-        PhotosfromAxford
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        some photos from Booyong Reserve.  The first flush of mushrooms
+          
+            <div class="new-meta-item date">
+  <a class='notlink' href="/" onclick="return false;" title="Click me!" >
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2022年3月13日</p>
+  </a>
+</div>
 
+          
+        
+          
+            
 
-
-
-
-
-
-
-
-
-
-      
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
+      </div>
     
   </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <h1 id="Win子系统多线程Bayes构建"><a href="#Win子系统多线程Bayes构建" class="headerlink" title="Win子系统多线程Bayes构建"></a>Win子系统多线程Bayes构建</h1><h2 id="1-win子系统的安装ubuntu"><a href="#1-win子系统的安装ubuntu" class="headerlink" title="1. win子系统的安装ubuntu"></a>1. win子系统的安装ubuntu</h2><div class="story post-story"><h3 id="（1）启动开发人员模式"><a href="#（1）启动开发人员模式" class="headerlink" title="（1）启动开发人员模式"></a>（1）启动开发人员模式</h3><pre><code>Windows系统设置 -&gt; 更新和安全 -&gt; 开发者选项 -&gt; 开发人员模式
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/jungleblack007/images@master/20220110164832.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/jungleblack007/images@master/20220110164832.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" ></p>
+<h3 id="（2）打开window-子系统-linux"><a href="#（2）打开window-子系统-linux" class="headerlink" title="（2）打开window 子系统 linux"></a>（2）打开window 子系统 linux</h3><pre><code>Windows系统设置 -&gt; 应用 -&gt; 程序和功能 -&gt; 启动或关闭windows功能 -&gt; 适用于Linux的Windows子系统
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/jungleblack007/images@master/20220110165005.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/jungleblack007/images@master/20220110165005.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" ></p>
+<h3 id="（3）重启电脑！"><a href="#（3）重启电脑！" class="headerlink" title="（3）重启电脑！"></a>（3）重启电脑！</h3><h3 id="（4）在Microsoft-Store中搜索ubuntu并安装"><a href="#（4）在Microsoft-Store中搜索ubuntu并安装" class="headerlink" title="（4）在Microsoft Store中搜索ubuntu并安装"></a>（4）在Microsoft Store中搜索ubuntu并安装</h3><pre><code>在这里安装ubuntu 18.04和20.04都可以
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/jungleblack007/images@master/20220110165053.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/jungleblack007/images@master/20220110165053.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" ></p>
+</div><h2 id="2-安装MPI"><a href="#2-安装MPI" class="headerlink" title="2. 安装MPI"></a>2. 安装MPI</h2><div class="story post-story"><pre><code>这里参考了程林老师的多线程MrBayes安装教程及使用(Mpi_MrBayes)如有侵权请与作者联系。
+</code></pre>
+<h3 id="进入ubuntu以后，直接输入以下代码，尽量不要更改。如果不能安装，可以重启一下ubuntu再试一次"><a href="#进入ubuntu以后，直接输入以下代码，尽量不要更改。如果不能安装，可以重启一下ubuntu再试一次" class="headerlink" title="进入ubuntu以后，直接输入以下代码，尽量不要更改。如果不能安装，可以重启一下ubuntu再试一次"></a>进入ubuntu以后，直接输入以下代码，尽量不要更改。如果不能安装，可以重启一下ubuntu再试一次</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">wget https://www.open-mpi.org/software/ompi/v1.10/downloads/openmpi-1.10.1.tar.gz</span><br><span class="line">tar -xzvf ./openmpi-1.10.1.tar.gz</span><br><span class="line"><span class="built_in">cd</span> openmpi-1.10.1</span><br><span class="line">./configure --prefix=/usr/<span class="built_in">local</span>/mpi</span><br><span class="line">make -j all</span><br><span class="line">make install```</span><br><span class="line"><span class="comment">### 然后配置一下环境</span></span><br><span class="line">```bash</span><br><span class="line"><span class="comment"># 首先用这个名宁进入一个vim文档</span></span><br><span class="line">sudo vi /etc/profile</span><br><span class="line"><span class="comment"># 然后摁一下键盘i，进入书写模式。将下面两行命令加到最后</span></span><br><span class="line"><span class="built_in">export</span> PATH=/usr/<span class="built_in">local</span>/mpi/bin:<span class="variable">$PATH</span></span><br><span class="line"><span class="built_in">export</span> LD_LIBRARY_PATH=/usr/<span class="built_in">local</span>/mpi/lib:<span class="variable">$LD_LIBRARY_PATH</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/jungleblack007/images@master/20220110165621.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/jungleblack007/images@master/20220110165621.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" ><br>最后，摁一下Esc，退出插入模式。输入 :qw ，回车。就保存退出了。</p>
+</div><h2 id="3-安装MrBayes"><a href="#3-安装MrBayes" class="headerlink" title="3. 安装MrBayes"></a>3. 安装MrBayes</h2><div class="story post-story"><pre><code>安装Mrbayes 3.2的方法特别多，我这里介绍的是Github中MrBayes网页上介绍的方法。
+</code></pre>
+<h3 id="首先安装HomeBrew，就是在ubuntu窗口中输入下面的代码"><a href="#首先安装HomeBrew，就是在ubuntu窗口中输入下面的代码" class="headerlink" title="首先安装HomeBrew，就是在ubuntu窗口中输入下面的代码"></a>首先安装HomeBrew，就是在ubuntu窗口中输入下面的代码</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/bin/bash -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="然后把Homebrew加入路径。（照着复制就行）"><a href="#然后把Homebrew加入路径。（照着复制就行）" class="headerlink" title="然后把Homebrew加入路径。（照着复制就行）"></a>然后把Homebrew加入路径。（照着复制就行）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">test</span> -d ~/.linuxbrew &amp;&amp; <span class="built_in">eval</span> $(~/.linuxbrew/bin/brew shellenv)</span><br><span class="line"><span class="built_in">test</span> -d /home/linuxbrew/.linuxbrew &amp;&amp; <span class="built_in">eval</span> $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)</span><br><span class="line"><span class="built_in">test</span> -r ~/.bash_profile &amp;&amp; <span class="built_in">echo</span> <span class="string">&quot;eval \$(<span class="subst">$(brew --prefix)</span>/bin/brew shellenv)&quot;</span> &gt;&gt;~/.bash_profile</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;eval \$(<span class="subst">$(brew --prefix)</span>/bin/brew shellenv)&quot;</span> &gt;&gt;~/.profile</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置好-brew以后，就可以直接安装MrBayes-mpi了"><a href="#配置好-brew以后，就可以直接安装MrBayes-mpi了" class="headerlink" title="配置好 brew以后，就可以直接安装MrBayes-mpi了"></a>配置好 brew以后，就可以直接安装MrBayes-mpi了</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew tap brewsci/bio</span><br><span class="line">brew install mrbayes --with-open-mpi</span><br></pre></td></tr></table></figure>
+
+<pre><code>这样MrBayes就算是安装好了。我们可以输入
+</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mb</span><br></pre></td></tr></table></figure>
+
+<pre><code>看看结果
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/jungleblack007/images@master/20220110165953.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/jungleblack007/images@master/20220110165953.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" ><br>能出现这样的结果就算是OK啦。我也不知道为什么只写了一个线程可用，但实际上我跑4个线程一点问题都木有。（4线程就是4倍的快乐啊），我这台电脑上的是 AMD 3900x，24倍的快乐它不香吗！！！</p>
+</div><h2 id="4-多线程运行贝叶斯"><a href="#4-多线程运行贝叶斯" class="headerlink" title="4. 多线程运行贝叶斯"></a>4. 多线程运行贝叶斯</h2><div class="story post-story"><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mpirun -np 4 mb -i /mnt/f/mrbayes/test.nex</span><br><span class="line"></span><br><span class="line"><span class="comment"># 这里/mnt/f/mrbayes/test.nex，mnt是windows系统，f代表f盘，mrbayes代表文件夹名，</span></span><br><span class="line"></span><br><span class="line">test.nex就是最终的文件了。</span><br></pre></td></tr></table></figure>
+
+</div>
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-11-04</time>
-        
-      </div>
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/2021/11/04/PhotosfromAxford/'>
-            阅读全文
-          </a>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=http://jungleblack007@gamil.com/2022/03/13/WSL-Mrbayes/>http://jungleblack007@gamil.com/2022/03/13/WSL-Mrbayes/</a></p>
+              
+            
+          </blockquote>
         </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2022-03-13T17:09:24+08:00">
+  <a class='notlink' href="/" onclick="return false;" title="Click me!" >
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2022年3月13日</p>
+  </a>
 </div>
 
-          </div>
         
       
-    
-  </section>
+        
+          
   
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>生物信息学</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jungleblack007@gamil.com/2022/03/13/WSL-Mrbayes/&title=WSL_Mrbayes - Mushroom Monkey&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" >
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://jungleblack007@gamil.com/2022/03/13/WSL-Mrbayes/&title=WSL_Mrbayes - Mushroom Monkey&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" >
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://jungleblack007@gamil.com/2022/03/13/WSL-Mrbayes/&title=WSL_Mrbayes - Mushroom Monkey&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" >
+          
+        </a>
+      
+    
+      
+        
+        <div class='hoverbox'>
+          <a class='share' href="/" onclick="return false;" title="Click me!" ><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/wechat.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/wechat.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" ></a>
+          <div class='target'>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATgAAAE4CAAAAADqFLC2AAADnUlEQVR42u3awXHDMAwEQPffdFKBR8QBsqFk+fOMTBPLPC6AXj9WtF4IwIEDB84CB24J3Ctcbze+eP70++nn0/3SesGBAwcOHDhw4LbBHQfAN89fwZ7+zhV4dZ/0HG/hwYEDBw4cOHDglsJVA+xpgadBuhxIh85//Dw4cODAgQMHDtwfg6tCVMHSxmTa2AQHDhw4cODAgftvcN390kFzd8ANDhw4cODAgQP3dLipg0ztl4Kun+SDAwcOHDhw4MANwVVXCrnlc1wvOHDgwIEDBw7cErjuOm1gfrpRefX7cb3gwIEDBw4cOHBL4NKAmDYQ73rx7xQqrQ8cOHDgwIEDB24bXDd4TjcKpwL56Tmrg3Fw4MCBAwcOHLhtcMdfDAPm6b7Vwqsw3aAODhw4cODAgQO3Fa5acAqSXth0I7QcqMGBAwcOHDhw4JbAVTdMA+TdQfbuc4EDBw4cOHDgwG2Dqw6iu43P9Ll4gDzUkAUHDhw4cODAgdsONx0gp4NrerFlIHDgwIEDBw4cuOVwaRBMB8jVhmYVOgU6rgscOHDgwIEDB24Z3HEAvLmQtFFZDeDVoA4OHDhw4MCBA7cNrjuYniqsO4ieGkhf7gcOHDhw4MCBA7cEbuqgaUFpozMN6rcNpMGBAwcOHDhw4JbBnQbeFKIK2m2QpgEeHDhw4MCBAwduG1wKkYJ1v1cNuFNBGRw4cODAgQMHbitcF+wukDSATw2+LwMwOHDgwIEDBw7cErgp0GqwnhqQdxc4cODAgQMHDtzT4T41UK4G3eoguQt33MgEBw4cOHDgwIH7Elw6QK6+oJgOmtPGabXReekADhw4cODAgQO3BK47IJ4OytXGajXIty8WHDhw4MCBAwduKdxpoemAOG1IdsG6FwsOHDhw4MCBA/dUuO5KA2f3XN2ADQ4cOHDgwIED9zS4aqFdgGpQrr64WB10v/UBBw4cOHDgwIFbAjcVbKsFnDYs7wKNfwccOHDgwIEDB24J3Ctc3wqw3QZq9YIu/3MABw4cOHDgwIH7Mtz0QboBOb3AaoO1/MIhOHDgwIEDBw7cUrhyIGwG02pjcwr89ELiST44cODAgQMHDtxD4Lr7VM9TbXymfwjgwIEDBw4cOHB/Ha4aiKsFdhuVUwEdHDhw4MCBAwduK1z3oJ8aTE9dTBUeHDhw4MCBAwduG1x3YFttQKZA6QB7rAELDhw4cODAgQO3BM4qNjgRgAMHDpwFDtx31y+NX4GIL5LpWwAAAABJRU5ErkJggg==" alt="This is a picture without description" >
+          </div>
+        </div>
+      
+    
+      
+        <a class="-mob-share-telegram" title="" rel="external nofollow noopener noreferrer noopener"
+          
+            target="_blank" href="https://t.me/share/url?url=http://jungleblack007@gamil.com/2022/03/13/WSL-Mrbayes/&text=WSL_Mrbayes - Mushroom Monkey"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/telegram.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/telegram.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" >
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+        <a class='prev' href='/2022/03/13/NGS20220312/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>NGS20220312</p>
+          <p class='content'>NGS 分析流程首先，拿到的数据。
+0. 去PCR重复（可选）Fastunique
+1. 数据质控（可选）12fastqc -o fastqc -t 20 Ge1416_FDSW20231766...</p>
+        </a>
+      
+      
+        <a class='next' href='/2022/03/13/Amanita-NGS/'>
+          <p class='title'>Amanita_NGS<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>2022.3.8接手蔡姐的鹅膏属数据，其中他从网上下载的Amanita muscaria的数据被我换成了从NCBI上下载的已经注释好的，剩下的10号标本她给的。
+
+分析codes12345678...</p>
+        </a>
+      
+    </div>
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <!-- Custom Files postEnd end-->
+</article>
+
+
+  
+
+  
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    
+    <div id="layoutHelper-comments"></div>
+
+  </article>
   
 
 
-    
-  
+
+
+
 </div>
 <aside id='l_side'>
   
@@ -2121,100 +2304,22 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
 
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://cdn.jsdelivr.net/gh/jungleblack007/images@master/data/%E6%88%90%E7%A8%BF.png' alt="This is a picture without description" />
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>采蘑菇的小猴子</h2>
-        
-        
-          <p>蘑菇摄影骨灰粉，喜欢帮大家鉴定蘑菇图片，要是有标本就更好了~</p>
 
-        
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="https://weibo.com/5206989673/profile?rightmod=1&amp;wvr=6&amp;mod=personinfo"
-              class="social fab fa-weibo flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:2674102796@qq.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/jungleblack007"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
 
-  
-
-  
-    
-    
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
     
   <header>
     
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <a href="/tags/mushroom/" style="font-size: 14px; color: #999">mushroom</a> <a href="/tags/photos/" style="font-size: 14px; color: #999">photos</a> <a href="/tags/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/" style="font-size: 24px; color: #555">生物信息学</a>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-win%E5%AD%90%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%AE%89%E8%A3%85ubuntu"><span class="toc-text">1. win子系统的安装ubuntu</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%881%EF%BC%89%E5%90%AF%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E6%A8%A1%E5%BC%8F"><span class="toc-text">（1）启动开发人员模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%882%EF%BC%89%E6%89%93%E5%BC%80window-%E5%AD%90%E7%B3%BB%E7%BB%9F-linux"><span class="toc-text">（2）打开window 子系统 linux</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%883%EF%BC%89%E9%87%8D%E5%90%AF%E7%94%B5%E8%84%91%EF%BC%81"><span class="toc-text">（3）重启电脑！</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%884%EF%BC%89%E5%9C%A8Microsoft-Store%E4%B8%AD%E6%90%9C%E7%B4%A2ubuntu%E5%B9%B6%E5%AE%89%E8%A3%85"><span class="toc-text">（4）在Microsoft Store中搜索ubuntu并安装</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85MPI"><span class="toc-text">2. 安装MPI</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9B%E5%85%A5ubuntu%E4%BB%A5%E5%90%8E%EF%BC%8C%E7%9B%B4%E6%8E%A5%E8%BE%93%E5%85%A5%E4%BB%A5%E4%B8%8B%E4%BB%A3%E7%A0%81%EF%BC%8C%E5%B0%BD%E9%87%8F%E4%B8%8D%E8%A6%81%E6%9B%B4%E6%94%B9%E3%80%82%E5%A6%82%E6%9E%9C%E4%B8%8D%E8%83%BD%E5%AE%89%E8%A3%85%EF%BC%8C%E5%8F%AF%E4%BB%A5%E9%87%8D%E5%90%AF%E4%B8%80%E4%B8%8Bubuntu%E5%86%8D%E8%AF%95%E4%B8%80%E6%AC%A1"><span class="toc-text">进入ubuntu以后，直接输入以下代码，尽量不要更改。如果不能安装，可以重启一下ubuntu再试一次</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%AE%89%E8%A3%85MrBayes"><span class="toc-text">3. 安装MrBayes</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A6%96%E5%85%88%E5%AE%89%E8%A3%85HomeBrew%EF%BC%8C%E5%B0%B1%E6%98%AF%E5%9C%A8ubuntu%E7%AA%97%E5%8F%A3%E4%B8%AD%E8%BE%93%E5%85%A5%E4%B8%8B%E9%9D%A2%E7%9A%84%E4%BB%A3%E7%A0%81"><span class="toc-text">首先安装HomeBrew，就是在ubuntu窗口中输入下面的代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%84%B6%E5%90%8E%E6%8A%8AHomebrew%E5%8A%A0%E5%85%A5%E8%B7%AF%E5%BE%84%E3%80%82%EF%BC%88%E7%85%A7%E7%9D%80%E5%A4%8D%E5%88%B6%E5%B0%B1%E8%A1%8C%EF%BC%89"><span class="toc-text">然后把Homebrew加入路径。（照着复制就行）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E5%A5%BD-brew%E4%BB%A5%E5%90%8E%EF%BC%8C%E5%B0%B1%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E5%AE%89%E8%A3%85MrBayes-mpi%E4%BA%86"><span class="toc-text">配置好 brew以后，就可以直接安装MrBayes-mpi了</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E8%BF%90%E8%A1%8C%E8%B4%9D%E5%8F%B6%E6%96%AF"><span class="toc-text">4. 多线程运行贝叶斯</span></a></li></ol>
     </div>
   </section>
 
-
-  
 
   
 
@@ -2225,13 +2330,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </aside>
 
 
+
           <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="WSL_Mrbayes";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   //  see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs
@@ -2605,8 +2711,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast == "undefined") {
-      volantis.css('/css/message.css?time=1647162876456')
-      volantis.js('/js/message.js?time=1647162876456', () => {
+      volantis.css('/css/message.css?time=1647162876378')
+      volantis.js('/js/message.js?time=1647162876378', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -2650,8 +2756,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast == "undefined") {
-      volantis.css('/css/message.css?time=1647162876456')
-      volantis.js('/js/message.js?time=1647162876456', () => {
+      volantis.css('/css/message.css?time=1647162876378')
+      volantis.js('/js/message.js?time=1647162876378', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -2907,7 +3013,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       volantis.APlayerController = {};
     
-    volantis.js('/js/rightMenu.js?time=1647162876456')
+    volantis.js('/js/rightMenu.js?time=1647162876378')
   </script>
 
 
@@ -2921,19 +3027,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1647162876456")
+        volantis.js("/js/plugins/sites.js?time=1647162876378")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1647162876456")
+        volantis.js("/js/plugins/friends.js?time=1647162876378")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1647162876456")
+        volantis.js("/js/plugins/contributors.js?time=1647162876378")
       }
     
   };
@@ -3043,7 +3149,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-<script src="/js/app.js?time=1647162876456.js"></script>
+<script src="/js/app.js?time=1647162876378.js"></script>
 
 
 <!-- optional -->
@@ -3056,7 +3162,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1647162876456");
+    return volantis.js("/js/search/hexo.js?time=1647162876378");
   }
 
   function loadSearchService() {
@@ -3301,7 +3407,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Mushroom Monkey","url":"http://jungleblack007@gamil.com/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"sameAs":["https://github.com/volantis-x"]},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://jungleblack007@gamil.com/","name":"Mushroom Monkey"}},{"@type":"ListItem","position":2,"item":{"@id":"http://jungleblack007@gamil.com/tags/photos/","name":"photos"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Mushroom Monkey","url":"http://jungleblack007@gamil.com/","keywords":"大型真菌,蘑菇,系统发育,宏基因组","description":"Up主是骨灰级蘑菇爱好者，喜欢蘑菇分类和鉴定；最近也在学习一些系统发育、宏基因组相关的知识，也会上传一些教程在这里。欢迎大家发图片给UP主鉴定，当然能采集蘑菇标本最好啦~","author":{"@type":"Person","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"}},"publisher":{"@type":"Organization","name":"Mushroom Monkey","url":"http://jungleblack007@gamil.com/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://jungleblack007@gamil.com?s={search_term_string}"},"query-input":"required name=search_term_string"}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Mushroom Monkey","url":"http://jungleblack007@gamil.com/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"sameAs":["https://github.com/volantis-x"]},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://jungleblack007@gamil.com/","name":"Mushroom Monkey"}},{"@type":"ListItem","position":3,"item":{"@id":"http://jungleblack007@gamil.com/2022/03/13/WSL-Mrbayes/","name":"WSL_Mrbayes"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"WSL_Mrbayes","description":"","datePublished":"2022-03-13T09:07:22.000Z","dateModified":"2022-03-13T09:09:24.075Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://jungleblack007@gamil.com/2022/03/13/WSL-Mrbayes/"},"author":{"@type":"Person"},"publisher":{"@type":"Organization","name":"Mushroom Monkey","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://jungleblack007@gamil.com/2022/03/13/WSL-Mrbayes/","wordCount":0,"keywords":"生物信息学"}]</script>
 
 
 <!-- more -->
