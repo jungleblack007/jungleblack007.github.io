@@ -20,10 +20,10 @@
   <meta content="Mushroom Monkey" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1656923182261" as="style">
+  <link rel="preload" href="/css/style.css?time=1666678981355" as="style">
   <!-- 页面元数据 -->
   <title>Busco和基因组大小统计 - Mushroom Monkey</title>
-  <meta name="keywords" content="codes 生物信息学 perl,大型真菌,蘑菇,系统发育,宏基因组">
+  <meta name="keywords" content="生物信息学,大型真菌,蘑菇,系统发育,宏基因组">
   <meta name="description" content="小黑的碎碎念： 最近接到的二代测序基因组数据基本上都是100个一起的，工作量比较大，也很难找到对应的处理包或者源代码，所以自己写的比较多，做一期codes合辑总结一下。 目前呢，自己掌握比较熟练的是R和Python，但是这俩常年不用，而且对文本的处理非常之麻烦，所以在做基因组分析的时候还是尝试了不太熟悉的Perl和Shell，算是感受了一把掌握多种编程语言的快乐吧~  这几行的目的是从busco">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Busco和基因组大小统计">
@@ -33,9 +33,9 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-07-04T01:49:06.000Z">
-<meta property="article:modified_time" content="2022-07-04T08:07:13.251Z">
+<meta property="article:modified_time" content="2022-10-25T06:18:06.541Z">
 <meta property="article:author" content="小黑Black_007">
-<meta property="article:tag" content="codes 生物信息学 perl">
+<meta property="article:tag" content="生物信息学">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
   <!-- feed -->
@@ -1661,8 +1661,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1656923182261" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1656923182261"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1666678981355" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1666678981355"></noscript>
   
 <script>
 if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
@@ -2136,10 +2136,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2022-07-04T16:07:13+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2022-10-25T14:18:06+08:00">
   <a class='notlink' href="/" onclick="return false;" title="Click me!" >
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2022年7月4日</p>
+    <p>更新于：2022年10月25日</p>
   </a>
 </div>
 
@@ -2148,7 +2148,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/codes-%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6-perl/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>codes 生物信息学 perl</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>生物信息学</p></a></div>
 
 
         
@@ -2676,8 +2676,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast == "undefined") {
-      volantis.css('/css/message.css?time=1656923182261')
-      volantis.js('/js/message.js?time=1656923182261', () => {
+      volantis.css('/css/message.css?time=1666678981355')
+      volantis.js('/js/message.js?time=1666678981355', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -2721,8 +2721,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast == "undefined") {
-      volantis.css('/css/message.css?time=1656923182261')
-      volantis.js('/js/message.js?time=1656923182261', () => {
+      volantis.css('/css/message.css?time=1666678981355')
+      volantis.js('/js/message.js?time=1666678981355', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -2978,7 +2978,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       volantis.APlayerController = {};
     
-    volantis.js('/js/rightMenu.js?time=1656923182261')
+    volantis.js('/js/rightMenu.js?time=1666678981355')
   </script>
 
 
@@ -2992,19 +2992,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1656923182261")
+        volantis.js("/js/plugins/sites.js?time=1666678981355")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1656923182261")
+        volantis.js("/js/plugins/friends.js?time=1666678981355")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1656923182261")
+        volantis.js("/js/plugins/contributors.js?time=1666678981355")
       }
     
   };
@@ -3114,7 +3114,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-<script src="/js/app.js?time=1656923182261.js"></script>
+<script src="/js/app.js?time=1666678981355.js"></script>
 
 
 <!-- optional -->
@@ -3127,7 +3127,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1656923182261");
+    return volantis.js("/js/search/hexo.js?time=1666678981355");
   }
 
   function loadSearchService() {
@@ -3372,7 +3372,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Mushroom Monkey","url":"http://jungleblack007@gamil.com/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"sameAs":["https://github.com/volantis-x"]},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://jungleblack007@gamil.com/","name":"Mushroom Monkey"}},{"@type":"ListItem","position":3,"item":{"@id":"http://jungleblack007@gamil.com/2022/07/04/Summaries-of-Busco-and-Scaffolds/","name":"Busco和基因组大小统计"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Busco和基因组大小统计","description":"","datePublished":"2022-07-04T01:49:06.000Z","dateModified":"2022-07-04T08:07:13.251Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://jungleblack007@gamil.com/2022/07/04/Summaries-of-Busco-and-Scaffolds/"},"author":{"@type":"Person"},"publisher":{"@type":"Organization","name":"Mushroom Monkey","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://jungleblack007@gamil.com/2022/07/04/Summaries-of-Busco-and-Scaffolds/","wordCount":0,"keywords":"codes 生物信息学 perl"}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Mushroom Monkey","url":"http://jungleblack007@gamil.com/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"sameAs":["https://github.com/volantis-x"]},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://jungleblack007@gamil.com/","name":"Mushroom Monkey"}},{"@type":"ListItem","position":3,"item":{"@id":"http://jungleblack007@gamil.com/2022/07/04/Summaries-of-Busco-and-Scaffolds/","name":"Busco和基因组大小统计"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Busco和基因组大小统计","description":"","datePublished":"2022-07-04T01:49:06.000Z","dateModified":"2022-10-25T06:18:06.541Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://jungleblack007@gamil.com/2022/07/04/Summaries-of-Busco-and-Scaffolds/"},"author":{"@type":"Person"},"publisher":{"@type":"Organization","name":"Mushroom Monkey","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://jungleblack007@gamil.com/2022/07/04/Summaries-of-Busco-and-Scaffolds/","wordCount":0,"keywords":"生物信息学"}]</script>
 
 
 <!-- more -->
