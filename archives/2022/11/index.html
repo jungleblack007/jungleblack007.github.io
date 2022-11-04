@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="http://jungleblack007@gamil.com/tags/codes-生物信息学-shell/"/>
+  <link rel="canonical" href="http://jungleblack007@gamil.com/archives/2022/11/"/>
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
   <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
@@ -20,14 +20,14 @@
   <meta content="Mushroom Monkey" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1666678981630" as="style">
+  <link rel="preload" href="/css/style.css?time=1667587360628" as="style">
   <!-- 页面元数据 -->
-  <title>标签：codes 生物信息学 shell - Mushroom Monkey</title>
+  <title>归档：2022/11 - Mushroom Monkey</title>
   <meta name="keywords" content="大型真菌,蘑菇,系统发育,宏基因组">
   <meta name="description" content="Up主是骨灰级蘑菇爱好者，喜欢蘑菇分类和鉴定；最近也在学习一些系统发育、宏基因组相关的知识，也会上传一些教程在这里。欢迎大家发图片给UP主鉴定，当然能采集蘑菇标本最好啦~">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Mushroom Monkey">
-<meta property="og:url" content="http://jungleblack007@gamil.com/tags/codes-%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6-shell/index.html">
+<meta property="og:url" content="http://jungleblack007@gamil.com/archives/2022/11/index.html">
 <meta property="og:site_name" content="Mushroom Monkey">
 <meta property="og:description" content="Up主是骨灰级蘑菇爱好者，喜欢蘑菇分类和鉴定；最近也在学习一些系统发育、宏基因组相关的知识，也会上传一些教程在这里。欢迎大家发图片给UP主鉴定，当然能采集蘑菇标本最好啦~">
 <meta property="og:locale" content="zh_CN">
@@ -1659,8 +1659,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1666678981630" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1666678981630"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1667587360628" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1667587360628"></noscript>
   
 <script>
 if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
@@ -1718,7 +1718,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files head end-->
 </head>
   <body>
-    <header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
+    <header id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -1974,7 +1974,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="none" class='cover-wrapper  dock' style="display: none;">
+      <div id="half" class='cover-wrapper  dock' style="display: ;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/jungleblack007/cdn/IMG_9692.JPG"></div>
 
@@ -2036,14 +2036,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="safearea">
         <div class="body-wrapper" id="pjax-container">
           
-
 <div id="l_main" class=''>
-  
-    
-      
+	
+		
   <section class="post-list">
     
       
+        
+          
+        
+          
         
           
         
@@ -2060,8 +2062,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title" >
-      <a href="/2022/07/04/TrimAI/">
-        单拷贝直系同源基因的比对结果TrimAI处理
+      <a href="/2022/11/05/Rename-Sequences-by-TBtools/">
+        Rename Sequences by TBtools
       </a>
     </h2>
   
@@ -2069,11 +2071,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         
-对于单拷贝直系同源基因的比对结果，常规操作是用Gblocks进行处理，但是Gblocks会删的比较彻底，以至于好多基因的文件夹都是空的，所以这次尝试了用TrimAI来进行删除。
+这一篇就是针对有时候我们需要从文献之中获取Accesion Number来构建系统树，首先我们把pdf转成excel然后提取序列，并做好命名工作。
 
-1234# trimal提取保守序列 for i in *.mafft;do	trimal -in $i -out $i.trimal -automated1;done
+TBtools批量下载，应该很简单。在如图所示的位置下载就行。
 
-然后就又遇到一个新的问题，那就是trim...
+然后是修改名字，这里一般是用两步，第一步删掉除了序列号以外的其他信息，可以用这行命令来执行：
+1sed -i &#x27;s/\.1.*//g&#x27; ef1.fasta
+...
       
     
   </div>
@@ -2081,12 +2085,102 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time>2022-07-04</time>
+        <time>2022-11-05</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2022/07/04/TrimAI/'>
+          <a class='readmore' href='/2022/11/05/Rename-Sequences-by-TBtools/'>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
+      <a href="/2022/11/02/ITSx-and-Blast/">
+        ITS的批量处理和BLAST比对
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      
+        ITSx, Blast
+平时我们做一个调查项目，每一份标本都会提取一个its或者lsu的序列， 首先我们需要将所有的序列合并到同一个文件中，然后进行ITSx的分区，最后根据unite的数据库进行blast。
+
+合并序列1234# 行云流水list=$(cat list.txt)#合并序列for i in $list;do echo &quot;&gt;$&#123;i&#125;&quot;...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time>2022-11-02</time>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/11/02/ITSx-and-Blast/'>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
+      <a href="/2022/11/02/MCMCtree-by-Amino-Acids/">
+        MCMCtree by Amino Acids
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      
+        
+
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time>2022-11-02</time>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/11/02/MCMCtree-by-Amino-Acids/'>
             阅读全文
           </a>
         </div>
@@ -2106,8 +2200,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
 
 
-    
-  
+	
 </div>
 <aside id='l_side'>
   
@@ -2203,7 +2296,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-      <a href="/tags/codes-%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6-shell/" style="font-size: 14px; color: #999">codes 生物信息学 shell</a> <a href="/tags/mushroom/" style="font-size: 14px; color: #999">mushroom</a> <a href="/tags/photos/" style="font-size: 14px; color: #999">photos</a> <a href="/tags/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/" style="font-size: 24px; color: #555">生物信息学</a>
+      <a href="/tags/mushroom/" style="font-size: 14px; color: #999">mushroom</a> <a href="/tags/photos/" style="font-size: 14px; color: #999">photos</a> <a href="/tags/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/" style="font-size: 24px; color: #555">生物信息学</a>
     </div>
   </section>
 
@@ -2233,14 +2326,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     // header
     var l_header=document.getElementById("l_header");
     
-    l_header.classList.add("show");
+    l_header.classList.remove("show");
     
     
       // cover
       var cover_wrapper=document.querySelector('#l_cover .cover-wrapper');
       var scroll_down=document.getElementById('scroll-down');
-      cover_wrapper.id="none";
-      cover_wrapper.style.display="none";
+      cover_wrapper.id="half";
+      cover_wrapper.style.display="";
       scroll_down.style.display="none";
     
   
@@ -2599,8 +2692,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast == "undefined") {
-      volantis.css('/css/message.css?time=1666678981630')
-      volantis.js('/js/message.js?time=1666678981630', () => {
+      volantis.css('/css/message.css?time=1667587360628')
+      volantis.js('/js/message.js?time=1667587360628', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -2644,8 +2737,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast == "undefined") {
-      volantis.css('/css/message.css?time=1666678981630')
-      volantis.js('/js/message.js?time=1666678981630', () => {
+      volantis.css('/css/message.css?time=1667587360628')
+      volantis.js('/js/message.js?time=1667587360628', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -2901,7 +2994,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       volantis.APlayerController = {};
     
-    volantis.js('/js/rightMenu.js?time=1666678981630')
+    volantis.js('/js/rightMenu.js?time=1667587360628')
   </script>
 
 
@@ -2915,19 +3008,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1666678981630")
+        volantis.js("/js/plugins/sites.js?time=1667587360628")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1666678981630")
+        volantis.js("/js/plugins/friends.js?time=1667587360628")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1666678981630")
+        volantis.js("/js/plugins/contributors.js?time=1667587360628")
       }
     
   };
@@ -3037,7 +3130,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-<script src="/js/app.js?time=1666678981630.js"></script>
+<script src="/js/app.js?time=1667587360628.js"></script>
 
 
 <!-- optional -->
@@ -3050,7 +3143,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1666678981630");
+    return volantis.js("/js/search/hexo.js?time=1667587360628");
   }
 
   function loadSearchService() {
@@ -3295,7 +3388,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Mushroom Monkey","url":"http://jungleblack007@gamil.com/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"sameAs":["https://github.com/volantis-x"]},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://jungleblack007@gamil.com/","name":"Mushroom Monkey"}},{"@type":"ListItem","position":2,"item":{"@id":"http://jungleblack007@gamil.com/tags/codes 生物信息学 shell/","name":"codes 生物信息学 shell"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Mushroom Monkey","url":"http://jungleblack007@gamil.com/","keywords":"大型真菌,蘑菇,系统发育,宏基因组","description":"Up主是骨灰级蘑菇爱好者，喜欢蘑菇分类和鉴定；最近也在学习一些系统发育、宏基因组相关的知识，也会上传一些教程在这里。欢迎大家发图片给UP主鉴定，当然能采集蘑菇标本最好啦~","author":{"@type":"Person","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"}},"publisher":{"@type":"Organization","name":"Mushroom Monkey","url":"http://jungleblack007@gamil.com/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://jungleblack007@gamil.com?s={search_term_string}"},"query-input":"required name=search_term_string"}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Mushroom Monkey","url":"http://jungleblack007@gamil.com/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"sameAs":["https://github.com/volantis-x"]},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://jungleblack007@gamil.com/","name":"Mushroom Monkey"}},{"@type":"ListItem","position":2,"item":{"@id":"http://jungleblack007@gamil.com/archives/","name":"Archive"}},{"@type":"ListItem","position":3,"item":{"@id":"http://jungleblack007@gamil.com/archives/2022/","name":"2022年"}},{"@type":"ListItem","position":4,"item":{"@id":"http://jungleblack007@gamil.com/archives/2022/11/","name":"11月"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Mushroom Monkey","url":"http://jungleblack007@gamil.com/","keywords":"大型真菌,蘑菇,系统发育,宏基因组","description":"Up主是骨灰级蘑菇爱好者，喜欢蘑菇分类和鉴定；最近也在学习一些系统发育、宏基因组相关的知识，也会上传一些教程在这里。欢迎大家发图片给UP主鉴定，当然能采集蘑菇标本最好啦~","author":{"@type":"Person","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"}},"publisher":{"@type":"Organization","name":"Mushroom Monkey","url":"http://jungleblack007@gamil.com/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://jungleblack007@gamil.com?s={search_term_string}"},"query-input":"required name=search_term_string"}}]</script>
 
 
 <!-- more -->

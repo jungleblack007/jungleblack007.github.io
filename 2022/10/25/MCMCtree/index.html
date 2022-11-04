@@ -20,7 +20,7 @@
   <meta content="Mushroom Monkey" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1666678981349" as="style">
+  <link rel="preload" href="/css/style.css?time=1667587360432" as="style">
   <!-- 页面元数据 -->
   <title>MCMCtree 计算分化时间 - Mushroom Monkey</title>
   <meta name="keywords" content="生物信息学,大型真菌,蘑菇,系统发育,宏基因组">
@@ -33,7 +33,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-10-25T06:11:24.000Z">
-<meta property="article:modified_time" content="2022-10-25T06:20:30.528Z">
+<meta property="article:modified_time" content="2022-11-04T18:42:28.547Z">
 <meta property="article:author" content="小黑Black_007">
 <meta property="article:tag" content="生物信息学">
 <meta name="twitter:card" content="summary">
@@ -1661,8 +1661,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1666678981349" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1666678981349"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1667587360432" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1667587360432"></noscript>
   
 <script>
 if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
@@ -2116,6 +2116,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>接下来运行</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mcmctree mcmctree.ctl</span><br></pre></td></tr></table></figure>
 
+</div><h2 id="4-补充"><a href="#4-补充" class="headerlink" title="4. 补充"></a>4. 补充</h2><div class="story post-story"><h3 id="4-1-一条龙服务"><a href="#4-1-一条龙服务" class="headerlink" title="4.1  一条龙服务"></a>4.1  一条龙服务</h3><p>整体来讲，按上述内容走就可以很好的运行了，但我还是觉得非常之麻烦，于是写了一个mcmctree.sh</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">mcmctree mcmctree.ctl;</span><br><span class="line">rm out.BV rst tmp0001.ctl;</span><br><span class="line">cp ../wag.dat .;</span><br><span class="line">cp ../tmp0001.ctl .;</span><br><span class="line">codeml tmp0001.ctl;</span><br><span class="line">cp rst2 step3;</span><br><span class="line"><span class="built_in">cd</span> step3;</span><br><span class="line">mv rst2 in.BV;</span><br><span class="line">mcmctree mcmctree2.ctl;</span><br></pre></td></tr></table></figure>
+
+<p>就是我们在一个文件夹中放入蛋白序列文件(*.aa)、树文件(*.trees)和mcmctree.ctl文件，并创建一个step3文件夹，把这三个文件复制进去，并在这个文件夹的上一级文件夹中放入wag.dat和tmp0001.ctl就可以直接运行mcmctree.sh了。</p>
+<h3 id="4-2-关于收敛"><a href="#4-2-关于收敛" class="headerlink" title="4.2 关于收敛"></a>4.2 关于收敛</h3><p>为了让数据收敛其实也是一个非常困难的事情，可以根据参考资料中提供的信息来设置运算代数。</p>
+<p><img src="https://raw.githubusercontent.com/jungleblack007/images/master/img/image-20221105024052657.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/jungleblack007/images/master/img/image-20221105024052657.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221105024052657"></p>
+<p>在大量数据的时候我的数据验证结果为：burnin 2000k; sampfreq 10; nsample 1000k会更好一点。</p>
+<p>于此，mcmctree和r8s计算分化时间的全部工作就结束了！</p>
 <h1 id="参考资料："><a href="#参考资料：" class="headerlink" title="参考资料："></a>参考资料：</h1><p>PAML的官方网站：<br><a target="_blank" rel="noopener" href="http://abacus.gene.ucl.ac.uk/software/paml.html#download">Phylogenetic Analysis by Maximum Likelihood (PAML) (ucl.ac.uk)</a></p>
 <p>这一篇介绍了原理：<br><a target="_blank" rel="noopener" href="https://yanzhongsino.github.io/2021/03/25/bioinfo_caculate.divergence.time/">估算系统树分歧时间 —— paml.mcmctree,r8s | 生信技工<br>(yanzhongsino.github.io)</a></p>
 <p>这几篇是介绍了MCMC估算的pepline：<br><a target="_blank" rel="noopener" href="https://deathsprout.gitee.io/p/mcmctree-%E5%AE%9A%E5%B9%B4-%E4%BD%BF%E7%94%A8%E6%B0%A8%E5%9F%BA%E9%85%B8%E5%BA%8F%E5%88%97/">mcmctree 定年 —— 使用氨基酸序列 (gitee.io)</a><br><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/46b28829b078">mcmctree估算物种分歧时间 - 简书 (jianshu.com)</a><br><a target="_blank" rel="noopener" href="http://www.chenlianfu.com/?p=2974">使用PAML进行分歧时间计算 | 陈连福的生信博客 (chenlianfu.com)</a><br>这一篇介绍了很多参数<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/bio-mary/p/12818888.html">PAML软件中的mcmctree命令估算物种分歧时间 - BPSO_mynotes - 博客园 (cnblogs.com)</a></p>
@@ -2156,10 +2164,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2022-10-25T14:20:30+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2022-11-05T02:42:28+08:00">
   <a class='notlink' href="/" onclick="return false;" title="Click me!" >
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2022年10月25日</p>
+    <p>更新于：2022年11月5日</p>
   </a>
 </div>
 
@@ -2313,7 +2321,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%AE%89%E8%A3%85"><span class="toc-text">1. 安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%96%87%E4%BB%B6%E7%9A%84%E5%87%86%E5%A4%87"><span class="toc-text">2. 文件的准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E8%BF%90%E8%A1%8C%E7%A8%8B%E5%BA%8F"><span class="toc-text">3. 运行程序</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%AE%89%E8%A3%85"><span class="toc-text">1. 安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%96%87%E4%BB%B6%E7%9A%84%E5%87%86%E5%A4%87"><span class="toc-text">2. 文件的准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E8%BF%90%E8%A1%8C%E7%A8%8B%E5%BA%8F"><span class="toc-text">3. 运行程序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E8%A1%A5%E5%85%85"><span class="toc-text">4. 补充</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E4%B8%80%E6%9D%A1%E9%BE%99%E6%9C%8D%E5%8A%A1"><span class="toc-text">4.1  一条龙服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-%E5%85%B3%E4%BA%8E%E6%94%B6%E6%95%9B"><span class="toc-text">4.2 关于收敛</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -2708,8 +2716,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast == "undefined") {
-      volantis.css('/css/message.css?time=1666678981349')
-      volantis.js('/js/message.js?time=1666678981349', () => {
+      volantis.css('/css/message.css?time=1667587360432')
+      volantis.js('/js/message.js?time=1667587360432', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -2753,8 +2761,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast == "undefined") {
-      volantis.css('/css/message.css?time=1666678981349')
-      volantis.js('/js/message.js?time=1666678981349', () => {
+      volantis.css('/css/message.css?time=1667587360432')
+      volantis.js('/js/message.js?time=1667587360432', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -3010,7 +3018,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       volantis.APlayerController = {};
     
-    volantis.js('/js/rightMenu.js?time=1666678981349')
+    volantis.js('/js/rightMenu.js?time=1667587360432')
   </script>
 
 
@@ -3024,19 +3032,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1666678981349")
+        volantis.js("/js/plugins/sites.js?time=1667587360432")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1666678981349")
+        volantis.js("/js/plugins/friends.js?time=1667587360432")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1666678981349")
+        volantis.js("/js/plugins/contributors.js?time=1667587360432")
       }
     
   };
@@ -3146,7 +3154,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-<script src="/js/app.js?time=1666678981349.js"></script>
+<script src="/js/app.js?time=1667587360432.js"></script>
 
 
 <!-- optional -->
@@ -3159,7 +3167,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1666678981349");
+    return volantis.js("/js/search/hexo.js?time=1667587360432");
   }
 
   function loadSearchService() {
@@ -3404,7 +3412,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Mushroom Monkey","url":"http://jungleblack007@gamil.com/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"sameAs":["https://github.com/volantis-x"]},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://jungleblack007@gamil.com/","name":"Mushroom Monkey"}},{"@type":"ListItem","position":3,"item":{"@id":"http://jungleblack007@gamil.com/2022/10/25/MCMCtree/","name":"MCMCtree 计算分化时间"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"MCMCtree 计算分化时间","description":"","datePublished":"2022-10-25T06:11:24.000Z","dateModified":"2022-10-25T06:20:30.528Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://jungleblack007@gamil.com/2022/10/25/MCMCtree/"},"author":{"@type":"Person"},"publisher":{"@type":"Organization","name":"Mushroom Monkey","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://jungleblack007@gamil.com/2022/10/25/MCMCtree/","wordCount":0,"keywords":"生物信息学"}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Mushroom Monkey","url":"http://jungleblack007@gamil.com/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"sameAs":["https://github.com/volantis-x"]},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://jungleblack007@gamil.com/","name":"Mushroom Monkey"}},{"@type":"ListItem","position":3,"item":{"@id":"http://jungleblack007@gamil.com/2022/10/25/MCMCtree/","name":"MCMCtree 计算分化时间"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"MCMCtree 计算分化时间","description":"","datePublished":"2022-10-25T06:11:24.000Z","dateModified":"2022-11-04T18:42:28.547Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://jungleblack007@gamil.com/2022/10/25/MCMCtree/"},"author":{"@type":"Person"},"publisher":{"@type":"Organization","name":"Mushroom Monkey","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://jungleblack007@gamil.com/2022/10/25/MCMCtree/","wordCount":0,"keywords":"生物信息学"}]</script>
 
 
 <!-- more -->

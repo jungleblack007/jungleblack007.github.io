@@ -4,8 +4,8 @@
   <meta name="generator" content="Hexo 5.4.0">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="http://jungleblack007@gamil.com/tags/生物信息学/"/>
+  
+  <link rel="canonical" href="http://jungleblack007@gamil.com/2022/11/02/itsx-and-blast/"/>
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
   <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
@@ -20,20 +20,22 @@
   <meta content="Mushroom Monkey" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1667587360643" as="style">
+  <link rel="preload" href="/css/style.css?time=1667587360422" as="style">
   <!-- 页面元数据 -->
-  <title>标签：生物信息学 - Mushroom Monkey</title>
-  <meta name="keywords" content="大型真菌,蘑菇,系统发育,宏基因组">
-  <meta name="description" content="Up主是骨灰级蘑菇爱好者，喜欢蘑菇分类和鉴定；最近也在学习一些系统发育、宏基因组相关的知识，也会上传一些教程在这里。欢迎大家发图片给UP主鉴定，当然能采集蘑菇标本最好啦~">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Mushroom Monkey">
-<meta property="og:url" content="http://jungleblack007@gamil.com/tags/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/index.html">
+  <title>ITS的批量处理和BLAST比对 - Mushroom Monkey</title>
+  <meta name="keywords" content="生物信息学,大型真菌,蘑菇,系统发育,宏基因组">
+  <meta name="description" content="ITSx, Blast 平时我们做一个调查项目，每一份标本都会提取一个its或者lsu的序列， 首先我们需要将所有的序列合并到同一个文件中，然后进行ITSx的分区，最后根据unite的数据库进行blast。  合并序列1234# 行云流水list&#x3D;$(cat list.txt)#合并序列for i in $list;do echo &quot;&gt;$&amp;#123;i&amp;#125;&quot; &amp;g">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ITS的批量处理和BLAST比对">
+<meta property="og:url" content="http://jungleblack007@gamil.com/2022/11/02/ITSx-and-Blast/index.html">
 <meta property="og:site_name" content="Mushroom Monkey">
-<meta property="og:description" content="Up主是骨灰级蘑菇爱好者，喜欢蘑菇分类和鉴定；最近也在学习一些系统发育、宏基因组相关的知识，也会上传一些教程在这里。欢迎大家发图片给UP主鉴定，当然能采集蘑菇标本最好啦~">
+<meta property="og:description" content="ITSx, Blast 平时我们做一个调查项目，每一份标本都会提取一个its或者lsu的序列， 首先我们需要将所有的序列合并到同一个文件中，然后进行ITSx的分区，最后根据unite的数据库进行blast。  合并序列1234# 行云流水list&#x3D;$(cat list.txt)#合并序列for i in $list;do echo &quot;&gt;$&amp;#123;i&amp;#125;&quot; &amp;g">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2022-11-02T05:12:05.000Z">
+<meta property="article:modified_time" content="2022-11-04T18:30:37.755Z">
 <meta property="article:author" content="小黑Black_007">
-<meta property="article:tag" content="大型真菌,蘑菇,系统发育,宏基因组">
+<meta property="article:tag" content="生物信息学">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
   <!-- feed -->
@@ -1659,8 +1661,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1667587360643" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1667587360643"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1667587360422" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1667587360422"></noscript>
   
 <script>
 if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
@@ -1974,7 +1976,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="none" class='cover-wrapper  dock' style="display: none;">
+      <div id="none" class='cover-wrapper post dock' style="display: none;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/jungleblack007/cdn/IMG_9692.JPG"></div>
 
@@ -2036,508 +2038,247 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="safearea">
         <div class="body-wrapper" id="pjax-container">
           
-
 <div id="l_main" class=''>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
   
+
+
+  
+  <div class="article-meta" id="top">
+    
+    
+    
+      <h1 class="title">
+        ITS的批量处理和BLAST比对
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="" alt="This is a picture without description" >
+    <p>小黑Black_007</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink' href="/" onclick="return false;" title="Click me!" >
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2022年11月2日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
+      </div>
+    
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <h1 id="ITSx-Blast"><a href="#ITSx-Blast" class="headerlink" title="ITSx, Blast"></a>ITSx, Blast</h1><blockquote>
+<p>平时我们做一个调查项目，每一份标本都会提取一个its或者lsu的序列， 首先我们需要将所有的序列合并到同一个文件中，然后进行ITSx的分区，最后根据unite的数据库进行blast。</p>
+</blockquote>
+<h2 id="合并序列"><a href="#合并序列" class="headerlink" title="合并序列"></a>合并序列</h2><div class="story post-story"><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 行云流水</span></span><br><span class="line">list=$(cat list.txt)</span><br><span class="line"><span class="comment">#合并序列</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="variable">$list</span>;<span class="keyword">do</span> <span class="built_in">echo</span> <span class="string">&quot;&gt;<span class="variable">$&#123;i&#125;</span>&quot;</span> &gt;&gt; ./sequences.fasta; grep -v <span class="string">&quot;&gt;&quot;</span> <span class="variable">$&#123;i&#125;</span> &gt;&gt; ./sequences.fasta; <span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+
+</div><h2 id="ITSx"><a href="#ITSx" class="headerlink" title="ITSx"></a>ITSx</h2><div class="story post-story"><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装</span></span><br><span class="line">conda install ITSx</span><br><span class="line"><span class="comment"># 使用</span></span><br><span class="line">ITSX -i test.fasta -o <span class="built_in">test</span> --save_regions ITS1,5.8S,ITS2 --partial 10</span><br></pre></td></tr></table></figure>
+
+<p>这样我们就分别得到了ITS1,5.8S,ITS2以及ITS全长！可以帮我掐掉5’端的18s，3’端的28s只留下ITS的序列。</p>
+</div><h2 id="Blast"><a href="#Blast" class="headerlink" title="Blast"></a>Blast</h2><div class="story post-story"><p>这里主要介绍了大批量的序列合并和unite数据库对比的一个流程，基本上都可以直接复制粘贴了用。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#建库</span></span><br><span class="line">makeblastdb -<span class="keyword">in</span> UNITE.fasta -dbtype nucl -out unite</span><br><span class="line"><span class="comment">#建库测试</span></span><br><span class="line">blastdbcmd -db unite -dbtype nucl -info</span><br><span class="line"><span class="comment">#blast</span></span><br><span class="line">blastn -db unite -query sequences.fasta -perc_identity 97 -evalue 1e-5 -outfmt 6  -num_threads 20 &gt; zhejiang.csv</span><br></pre></td></tr></table></figure>
+
+<p>然后就可以安安心心地去excel里边进行序列的挑选了。</p>
+
+</div>
+  
+  
+    
+    <div class='footer'>
+      
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=http://jungleblack007@gamil.com/2022/11/02/ITSx-and-Blast/>http://jungleblack007@gamil.com/2022/11/02/ITSx-and-Blast/</a></p>
+              
+            
+          </blockquote>
+        </div>
+      
+      
+    </div>
+  
+  
+    
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2022-11-05T02:30:37+08:00">
+  <a class='notlink' href="/" onclick="return false;" title="Click me!" >
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2022年11月5日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>生物信息学</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
       
-  <section class="post-list">
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jungleblack007@gamil.com/2022/11/02/ITSx-and-Blast/&title=ITS的批量处理和BLAST比对 - Mushroom Monkey&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" >
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://jungleblack007@gamil.com/2022/11/02/ITSx-and-Blast/&title=ITS的批量处理和BLAST比对 - Mushroom Monkey&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" >
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://jungleblack007@gamil.com/2022/11/02/ITSx-and-Blast/&title=ITS的批量处理和BLAST比对 - Mushroom Monkey&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" >
+          
+        </a>
+      
     
       
         
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
+        <div class='hoverbox'>
+          <a class='share' href="/" onclick="return false;" title="Click me!" ><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/wechat.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/wechat.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" ></a>
+          <div class='target'>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATgAAAE4CAAAAADqFLC2AAADqElEQVR42u3aQW7DMAwEwPz/0+29QCEtySRMO7qltWVxfFmQfnxZpfVAAA4cOHAWOHBL4B7FdXzAj+u6+532nzrH6XzgwIEDBw4cOHDb4LoHPkHc/v220NtznvaP4cGBAwcOHDhw4JbCHQPg5UG6UOmLqe4f1wsOHDhw4MCBA/dP4W6f221Edhub4MCBAwcOHDhw/wWuWlC14Vh9geDAgQMHDhw4cH8VLh7QvmjQXB1Ip8H8ZZN8cODAgQMHDhy4IbhqkP3U3+V6wYEDBw4cOHDglsB1V3UQfNqnG7TTwHxdLzhw4MCBAwcO3BK4Z324lwbRbmOyer74fnDgwIEDBw4cuKVw3QFv+iKmBt7T69fnggMHDhw4cODALYG7DaTTwbg7+J4O3LfXgwMHDhw4cODAbYHrDnDTD/uqjclnvaC4PnDgwIEDBw4cuGVwtxvcHrw78K4G29N9aUMVHDhw4MCBAwfuU+G6Dc7qALn7groDbXDgwIEDBw4cuE+Hm2o0VgutDqanBtrgwIEDBw4cOHBb4dJGZbfhWR0spwE2BYoDMDhw4MCBAwcO3JvhpgJm2kCc/rBwesD9a13gwIEDBw4cOHBL4KobVIPxVODuNkbLDVNw4MCBAwcOHLglcKeNpwJk+UO+y+en96X1gwMHDhw4cODAbYPrFjwFUz1HNbhXG7LgwIEDBw4cOHBb4NKgmxZ++zttbFaD+fgkHxw4cODAgQMHbjlcNRhXA/JUUB6/Dhw4cODAgQMHbjlcChA3BMOB8dhAuRv4wYEDBw4cOHDgPgTutqBu47D7YWEVPN4XHDhw4MCBAwduKdz0oDoNsNVGY7rSwTU4cODAgQMHDtxWuGrjsnqQ6eu6jdfrRi44cODAgQMHDtxSuKnBcDWovjoYxy8SHDhw4MCBAwduKdwtRLfhWYXufsjYDsrgwIEDBw4cOHBL4dLf1cZkd4BdfVHtATY4cODAgQMHDtwSuO6qFtrdtxqc29eDAwcOHDhw4MAtgesGwm6QngrgU+c4Xg8OHDhw4MCBA7cMLg2Y1QCcAqQD8+nnHAMwOHDgwIEDBw7cErg4EIaB9Pbv7xo8lwMwOHDgwIEDBw7ch8JVB7/pgPo2WD+rcQoOHDhw4MCBA/fX4KoBeaoRWf1/2uAEBw4cOHDgwIHbCpcWlgbVKmx6f9oAva4HHDhw4MCBAwduGVx3YDsFkjZEp553XS84cODAgQMHDtwSOCtscCIABw4cOAscuPeub6JG/UTLQNquAAAAAElFTkSuQmCC" alt="This is a picture without description" >
+          </div>
+        </div>
       
     
-    
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2022/11/05/Rename-Sequences-by-TBtools/">
-        Rename Sequences by TBtools
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
+        <a class="-mob-share-telegram" title="" rel="external nofollow noopener noreferrer noopener"
+          
+            target="_blank" href="https://t.me/share/url?url=http://jungleblack007@gamil.com/2022/11/02/ITSx-and-Blast/&text=ITS的批量处理和BLAST比对 - Mushroom Monkey"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/telegram.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/telegram.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" >
+          
+        </a>
       
+    
+  </div>
+</div>
+
+
+
         
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+        <a class='prev' href='/2022/11/05/Rename-Sequences-by-TBtools/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Rename Sequences by TBtools</p>
+          <p class='content'>
 这一篇就是针对有时候我们需要从文献之中获取Accesion Number来构建系统树，首先我们把pdf转成excel然后提取序列，并做好命名工作。
 
-TBtools批量下载，应该很简单。在如图所示的位置下载就行。
-
-然后是修改名字，这里一般是用两步，第一步删掉除了序列号以外的其他信息，可以用这行命令来执行：
-1sed -i &#x27;s/\.1.*//g&#x27; ef1.fasta
-...
+TBtools批量下载，应该很简单。在如图...</p>
+        </a>
       
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2022-11-05</time>
-        
-      </div>
       
-        <div>
-          <a class='readmore' href='/2022/11/05/Rename-Sequences-by-TBtools/'>
-            阅读全文
-          </a>
-        </div>
+        <a class='next' href='/2022/11/02/MCMCtree-by-Amino-Acids/'>
+          <p class='title'>MCMCtree by Amino Acids<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>
+</p>
+        </a>
       
     </div>
   
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
+  <!-- Custom Files postEnd begin-->
   
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2022/11/02/ITSx-and-Blast/">
-        ITS的批量处理和BLAST比对
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        ITSx, Blast
-平时我们做一个调查项目，每一份标本都会提取一个its或者lsu的序列， 首先我们需要将所有的序列合并到同一个文件中，然后进行ITSx的分区，最后根据unite的数据库进行blast。
-
-合并序列1234# 行云流水list=$(cat list.txt)#合并序列for i in $list;do echo &quot;&gt;$&#123;i&#125;&quot;...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2022-11-02</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/11/02/ITSx-and-Blast/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2022/10/25/r8s/">
-        r8s 计算分化时间
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        r8s计算分化时间1. 下载与安装我不知道为什么网络上的下载路径都被禁用了，所以我找了一个网上下载的地方r8s download | SourceForge.net直接点这个链接也是可以的，https://sourceforge.net/projects/r8s/files/r8s1.81.tar.gz/download，这个版本是r8s 1.81，不是张金龙的1.71版，不过应该差不多，或...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2022-10-25</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/10/25/r8s/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2022/10/25/MCMCtree/">
-        MCMCtree 计算分化时间
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        
-目前我知道的可以做物种分化时间计算的软件主要有beast，beast2，r8s，paml的mcmctree，还有Nagy论文中的PhyloBayes (R package)。目前呢，我是尝试使用了beast2，非常的慢，我84个物种接近50万AA (amino acids) 每100万代运算时间差不多27h，但是一般设置是1亿代也就是需要100多天，年都过完了。暂且不提，所以开始尝试MCM...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2022-10-25</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/10/25/MCMCtree/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2022/07/04/TrimAI/">
-        单拷贝直系同源基因的比对结果TrimAI处理
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        
-对于单拷贝直系同源基因的比对结果，常规操作是用Gblocks进行处理，但是Gblocks会删的比较彻底，以至于好多基因的文件夹都是空的，所以这次尝试了用TrimAI来进行删除。
-
-1234# trimal提取保守序列 for i in *.mafft;do	trimal -in $i -out $i.trimal -automated1;done
-
-然后就又遇到一个新的问题，那就是trim...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2022-07-04</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/07/04/TrimAI/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2022/07/04/Summaries-of-Busco-and-Scaffolds/">
-        Busco和基因组大小统计
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        
-小黑的碎碎念：
-最近接到的二代测序基因组数据基本上都是100个一起的，工作量比较大，也很难找到对应的处理包或者源代码，所以自己写的比较多，做一期codes合辑总结一下。
-目前呢，自己掌握比较熟练的是R和Python，但是这俩常年不用，而且对文本的处理非常之麻烦，所以在做基因组分析的时候还是尝试了不太熟悉的Perl和Shell，算是感受了一把掌握多种编程语言的快乐吧~
-
-这几行的目的是从bu...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2022-07-04</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/07/04/Summaries-of-Busco-and-Scaffolds/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2022/03/13/NGS20220312/">
-        NGS20220312
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        NGS 分析流程首先，拿到的数据。
-0. 去PCR重复（可选）Fastunique
-1. 数据质控（可选）12fastqc -o fastqc -t 20 Ge1416_FDSW202317667-1r_R1.fq.gzfastqc -o fastqc -t 20 Ge1416_FDSW202317667-1r_R2.fq.gz
-
-输出的文件：
-2. 数据清洗1fastp -i Ge1416...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2022-03-13</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/03/13/NGS20220312/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2022/03/13/WSL-Mrbayes/">
-        WSL_Mrbayes
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        Win子系统多线程Bayes构建1. win子系统的安装ubuntu（1）启动开发人员模式Windows系统设置 -&gt; 更新和安全 -&gt; 开发者选项 -&gt; 开发人员模式
+  <!-- Custom Files postEnd end-->
+</article>
 
 
-（2）打开window 子系统 linuxWindows系统设置 -&gt; 应用 -&gt; 程序和功能 -&gt; 启动或关闭windows功能 -&gt; 适用于Linux的Windows子系统
-...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2022-03-13</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/03/13/WSL-Mrbayes/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
   
 
-</div>
+  
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    
+    <div id="layoutHelper-comments"></div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/12/09/Whole-Genome-Phylogenetic-Analysis/">
-        浅层基因组测序的系统发育分析
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-            继上一次浅层基因组数据分析笔记 - Mushroom Monkey (jungleblack007.github.io)之后，我们发现Orthofinder很多情况下能找到的单拷贝直系同源基因非常少，而且文章里面也没有使用这种方法。
-    这次，我要构建蘑菇目的系统发育树！
-下载蛋白序列    这个没啥好说的，JGI Genome Portal - Home (doe.gov)可以...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-12-09</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/12/09/Whole-Genome-Phylogenetic-Analysis/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/08/30/%E4%BB%8E%E6%B5%85%E5%B1%82%E5%9F%BA%E5%9B%A0%E7%BB%84%E6%B5%8B%E5%BA%8F%E5%88%B0%E7%B3%BB%E7%BB%9F%E5%8F%91%E8%82%B2%E6%A0%91%E7%9A%84%E6%9E%84%E5%BB%BA/">
-        从浅层基因组测序到系统发育树的构建
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      <p>Miniconda3环境安装 -&gt; 质控 -&gt; 组装 -&gt; 预测 -&gt; 提取单拷贝直系同源基因 -&gt; 建树</p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-08-30</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/08/30/%E4%BB%8E%E6%B5%85%E5%B1%82%E5%9F%BA%E5%9B%A0%E7%BB%84%E6%B5%8B%E5%BA%8F%E5%88%B0%E7%B3%BB%E7%BB%9F%E5%8F%91%E8%82%B2%E6%A0%91%E7%9A%84%E6%9E%84%E5%BB%BA/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
+  </article>
   
 
 
-    
-  
+
+
+
 </div>
 <aside id='l_side'>
   
@@ -2545,100 +2286,22 @@ TBtools批量下载，应该很简单。在如图所示的位置下载就行。
     
     
 
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://cdn.jsdelivr.net/gh/jungleblack007/images@master/data/%E6%88%90%E7%A8%BF.png' alt="This is a picture without description" />
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>采蘑菇的小猴子</h2>
-        
-        
-          <p>蘑菇摄影骨灰粉，喜欢帮大家鉴定蘑菇图片，要是有标本就更好了~</p>
 
-        
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="https://weibo.com/5206989673/profile?rightmod=1&amp;wvr=6&amp;mod=personinfo"
-              class="social fab fa-weibo flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:2674102796@qq.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/jungleblack007"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
 
-  
-
-  
-    
-    
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
     
   <header>
     
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <a href="/tags/mushroom/" style="font-size: 14px; color: #999">mushroom</a> <a href="/tags/photos/" style="font-size: 14px; color: #999">photos</a> <a href="/tags/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/" style="font-size: 24px; color: #555">生物信息学</a>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%88%E5%B9%B6%E5%BA%8F%E5%88%97"><span class="toc-text">合并序列</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ITSx"><span class="toc-text">ITSx</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Blast"><span class="toc-text">Blast</span></a></li></ol>
     </div>
   </section>
 
-
-  
 
   
 
@@ -2649,13 +2312,14 @@ TBtools批量下载，应该很简单。在如图所示的位置下载就行。
 </aside>
 
 
+
           <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="ITS的批量处理和BLAST比对";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   //  see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs
@@ -3029,8 +2693,8 @@ TBtools批量下载，应该很简单。在如图所示的位置下载就行。
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast == "undefined") {
-      volantis.css('/css/message.css?time=1667587360643')
-      volantis.js('/js/message.js?time=1667587360643', () => {
+      volantis.css('/css/message.css?time=1667587360422')
+      volantis.js('/js/message.js?time=1667587360422', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -3074,8 +2738,8 @@ TBtools批量下载，应该很简单。在如图所示的位置下载就行。
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast == "undefined") {
-      volantis.css('/css/message.css?time=1667587360643')
-      volantis.js('/js/message.js?time=1667587360643', () => {
+      volantis.css('/css/message.css?time=1667587360422')
+      volantis.js('/js/message.js?time=1667587360422', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -3331,7 +2995,7 @@ TBtools批量下载，应该很简单。在如图所示的位置下载就行。
     
       volantis.APlayerController = {};
     
-    volantis.js('/js/rightMenu.js?time=1667587360643')
+    volantis.js('/js/rightMenu.js?time=1667587360422')
   </script>
 
 
@@ -3345,19 +3009,19 @@ TBtools批量下载，应该很简单。在如图所示的位置下载就行。
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1667587360643")
+        volantis.js("/js/plugins/sites.js?time=1667587360422")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1667587360643")
+        volantis.js("/js/plugins/friends.js?time=1667587360422")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1667587360643")
+        volantis.js("/js/plugins/contributors.js?time=1667587360422")
       }
     
   };
@@ -3467,7 +3131,7 @@ TBtools批量下载，应该很简单。在如图所示的位置下载就行。
 
 
 
-<script src="/js/app.js?time=1667587360643.js"></script>
+<script src="/js/app.js?time=1667587360422.js"></script>
 
 
 <!-- optional -->
@@ -3480,7 +3144,7 @@ TBtools批量下载，应该很简单。在如图所示的位置下载就行。
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1667587360643");
+    return volantis.js("/js/search/hexo.js?time=1667587360422");
   }
 
   function loadSearchService() {
@@ -3725,7 +3389,7 @@ TBtools批量下载，应该很简单。在如图所示的位置下载就行。
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Mushroom Monkey","url":"http://jungleblack007@gamil.com/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"sameAs":["https://github.com/volantis-x"]},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://jungleblack007@gamil.com/","name":"Mushroom Monkey"}},{"@type":"ListItem","position":2,"item":{"@id":"http://jungleblack007@gamil.com/tags/生物信息学/","name":"生物信息学"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Mushroom Monkey","url":"http://jungleblack007@gamil.com/","keywords":"大型真菌,蘑菇,系统发育,宏基因组","description":"Up主是骨灰级蘑菇爱好者，喜欢蘑菇分类和鉴定；最近也在学习一些系统发育、宏基因组相关的知识，也会上传一些教程在这里。欢迎大家发图片给UP主鉴定，当然能采集蘑菇标本最好啦~","author":{"@type":"Person","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"}},"publisher":{"@type":"Organization","name":"Mushroom Monkey","url":"http://jungleblack007@gamil.com/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://jungleblack007@gamil.com?s={search_term_string}"},"query-input":"required name=search_term_string"}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Mushroom Monkey","url":"http://jungleblack007@gamil.com/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"sameAs":["https://github.com/volantis-x"]},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://jungleblack007@gamil.com/","name":"Mushroom Monkey"}},{"@type":"ListItem","position":3,"item":{"@id":"http://jungleblack007@gamil.com/2022/11/02/ITSx-and-Blast/","name":"ITS的批量处理和BLAST比对"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"ITS的批量处理和BLAST比对","description":"","datePublished":"2022-11-02T05:12:05.000Z","dateModified":"2022-11-04T18:30:37.755Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://jungleblack007@gamil.com/2022/11/02/ITSx-and-Blast/"},"author":{"@type":"Person"},"publisher":{"@type":"Organization","name":"Mushroom Monkey","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://jungleblack007@gamil.com/2022/11/02/ITSx-and-Blast/","wordCount":0,"keywords":"生物信息学"}]</script>
 
 
 <!-- more -->
