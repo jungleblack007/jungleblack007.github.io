@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>物种调查报告数据分析流程</title>
+      <link href="/2022/11/07/%E7%89%A9%E7%A7%8D%E8%B0%83%E6%9F%A5%E6%8A%A5%E5%91%8A%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E6%B5%81%E7%A8%8B/"/>
+      <url>/2022/11/07/%E7%89%A9%E7%A7%8D%E8%B0%83%E6%9F%A5%E6%8A%A5%E5%91%8A%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E6%B5%81%E7%A8%8B/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>现在没有太多时间来处理这个，所以搞得比较急，之后会把整个过程写成一个R语言的函数一步实现的，目前就只能先这样啦。</p></blockquote><h2 id="长表变横表"><a href="#长表变横表" class="headerlink" title="长表变横表"></a>长表变横表</h2><div class="story post-story"><blockquote><p>我们在做物种调查表的时候经常会遇到需要将长表、横表互相变换的情况，可以使用R语言的reshape2包的dcast来实现。</p></blockquote><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">rm(<span class="built_in">list</span>=ls())</span><br><span class="line"></span><br><span class="line">library(xlsx)</span><br><span class="line">library(reshape2)</span><br><span class="line">setwd(<span class="string">&quot;D:/2022 总结/20221009 浙江衢州大型真菌调查报告&quot;</span>)</span><br><span class="line">table &lt;- read.csv(file = <span class="string">&quot;标本号物种表.csv&quot;</span>, sep = <span class="string">&quot;,&quot;</span>, header = <span class="built_in">T</span>)</span><br><span class="line"></span><br><span class="line">table1 &lt;- dcast(table,Species  ~ SpecimensNum)</span><br><span class="line">write.xlsx(table1, <span class="string">&quot;标本号物种表.xlsx&quot;</span>)</span><br></pre></td></tr></table></figure><p>之后在excel中，选中所有ctrl+G，右键删除，右侧单元格左移就完成了。</p><p>之后可以用&amp;” “&amp;符号将所有的物种粘贴到同一个表格，再用TRIM函数去掉末尾的空格就好了。</p><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="https://cloud.tencent.com/developer/article/1526683">R包reshape2 |轻松实现长、宽数据表格转换 - 腾讯云开发者社区-腾讯云 (tencent.com)</a></p></div>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 生物信息学, 数据处理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Rename Sequences by TBtools</title>
       <link href="/2022/11/05/Rename-Sequences-by-TBtools/"/>
       <url>/2022/11/05/Rename-Sequences-by-TBtools/</url>
